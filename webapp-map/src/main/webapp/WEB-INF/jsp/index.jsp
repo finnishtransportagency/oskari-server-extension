@@ -48,8 +48,8 @@
             }
 
 			#livi-logo {
-				height:272px;
-				width:272px;
+				height:183px;
+				width:100px;
 				margin-left:15px;
 				margin-top:5px;
 				padding-bottom:5px;
