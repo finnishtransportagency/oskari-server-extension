@@ -49,8 +49,8 @@
             }
 
 			#livi-logo {
-				height:183px;
-				width:100px;
+				height:153px;
+				width:153px;
 				margin-left:5px;
 				margin-top:5px;
 				padding-bottom:5px;
@@ -187,7 +187,7 @@
             />
     <%--language files --%>
     <script type="text/javascript"
-            src="/Oskari${path}/oskari_lang_fi.js">
+            src="/Oskari${path}/oskari_lang_${fi}.js">
     </script>
 </c:if>
 
