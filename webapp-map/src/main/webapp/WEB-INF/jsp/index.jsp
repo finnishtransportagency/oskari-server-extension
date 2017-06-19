@@ -53,7 +53,7 @@
 				margin-left:15px;
 				margin-top:5px;
 				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/logo.png") no-repeat;
+				background:url("/Oskari/applications/livi/servlet/images/livimustasnip.png") no-repeat;
 				cursor:pointer;
 			}
 
