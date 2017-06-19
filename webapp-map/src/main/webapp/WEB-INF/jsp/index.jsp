@@ -48,12 +48,12 @@
             }
 
 			#livi-logo {
-				height:183px;
-				width:100px;
+				height:272px;
+				width:272px;
 				margin-left:15px;
 				margin-top:5px;
 				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/livimustasnip.png") no-repeat;
+				background:url("/Oskari/applications/livi/servlet/images/livilogo.png") no-repeat;
 				cursor:pointer;
 			}
 
