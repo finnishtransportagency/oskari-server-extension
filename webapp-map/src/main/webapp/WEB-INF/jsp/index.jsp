@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liikennevirasto - Oskari - ${viewName}</title>
+    <title>Liikennevirasto - Oskari</title>
+     <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js">
     </script>
@@ -48,7 +49,7 @@
             }
 
 			#livi-logo {
-				height:100px;
+				height:183px;
 				width:100px;
 				margin-left:5px;
 				margin-top:5px;
@@ -186,7 +187,7 @@
             />
     <%--language files --%>
     <script type="text/javascript"
-            src="/Oskari${path}/oskari_lang_${language}.js">
+            src="/Oskari${path}/oskari_lang_fi.js">
     </script>
 </c:if>
 
