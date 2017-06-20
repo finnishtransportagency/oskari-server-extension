@@ -54,7 +54,7 @@
 				margin-left:10px;
 				margin-top:5px;
 				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/livilogosmall.png") no-repeat;
+				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
 				cursor:pointer;
 			}
 
