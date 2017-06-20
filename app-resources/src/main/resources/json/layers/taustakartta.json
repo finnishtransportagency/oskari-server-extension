@@ -1,7 +1,7 @@
 {
   "srs_name": "EPSG:3067",
   "type":"wmtslayer",
-  "url":"https://karttakuva.maanmittauslaitos.fi/maasto/wmts",
+  "url":"http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto?SERVICE=WMTS&REQUEST=GetCapabilities",
   "name":"taustakartta",
   "organization": "Maanmittauslaitos",
   "inspiretheme": "Taustakartat",
