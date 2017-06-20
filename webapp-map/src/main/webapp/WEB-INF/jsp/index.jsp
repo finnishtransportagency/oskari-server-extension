@@ -49,9 +49,9 @@
             }
 
 			#livi-logo {
-				height:153px;
-				width:153px;
-				margin-left:8px;
+				height:107px;
+				width:107px;
+				margin-left:10px;
 				margin-top:5px;
 				padding-bottom:5px;
 				background:url("/Oskari/applications/livi/servlet/images/livilogosmall.png") no-repeat;

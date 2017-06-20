@@ -16,14 +16,14 @@ import java.sql.Connection;
 import java.util.List;
 
 /**
- * Created by Marko Kuosmanen on 23.9.2015.
+ * Created by 
+ * Marko Kuosmanen on 23.9.2015.
  */
 public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements JdbcMigration {
     private static final ViewService VIEW_SERVICE = new ViewServiceIbatisImpl();
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceIbatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
     private static final String MAPFULL = "mapfull";
-
     private static final String KAPSI_WMS_TAUSTAKARTTA_URL = "http://tiles.kartat.kapsi.fi/taustakartta";
     private static final String KAPSI_WMS_TAUSTAKARTTA_NAME = "taustakartta";
     private static final String KAPSI_WMS_ORTOKARTTA_URL = "http://tiles.kartat.kapsi.fi/ortokuva";
