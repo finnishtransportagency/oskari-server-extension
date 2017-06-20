@@ -51,10 +51,10 @@
 			#livi-logo {
 				height:153px;
 				width:153px;
-				margin-left:5px;
+				margin-left:8px;
 				margin-top:5px;
 				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/livilogosmall.png") no-repeat;
+				background:url("/Oskari/applications/livi/servlet/images/livilogosmallblue.png") no-repeat;
 				cursor:pointer;
 			}
 
