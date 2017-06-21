@@ -77,10 +77,9 @@
         { "id" : "publisher2" },
         { "id" : "maplegend" },
         { "id" : "userguide" },
-        { "id" : "myplaces2" },
+
         { "id" : "printout" },
-        { "id" : "analyse" },
-        { "id" : "myplacesimport" },
+
         {
             "id" : "featuredata2",
             "config": {

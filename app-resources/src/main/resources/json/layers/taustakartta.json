@@ -1,7 +1,7 @@
 {
   "srs_name": "EPSG:3067",
   "type":"wmtslayer",
-  "url":"http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/taustakartta/default/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+  "url":"http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/",
   "name":"taustakartta",
   "organization": "Maanmittauslaitos",
   "inspiretheme": "Taustakartat",
