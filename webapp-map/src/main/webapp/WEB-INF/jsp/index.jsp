@@ -51,7 +51,7 @@
 			#livi-logo {
 				height:107px;
 				width:107px;
-				margin-left:30px;
+				margin-left:15px;
 				margin-top:5px;
 				padding-bottom:5px;
 				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
@@ -60,7 +60,7 @@
 
             #contentMap {
                 height: 100%;
-                margin-left: 170px;
+                margin-left: 120px;
             }
 
             #login {
@@ -68,7 +68,7 @@
             }
 
             #login input[type="text"], #login input[type="password"] {
-                width: 80%;
+                width: 90%;
                 margin-bottom: 5px;
                 background-image: url("/Oskari/resources/images/forms/input_shadow.png");
                 background-repeat: no-repeat;
@@ -81,7 +81,7 @@
                 font: 13px/100% Arial,sans-serif;
             }
             #login input[type="submit"] {
-                width: 80%;
+                width: 90%;
                 margin-bottom: 5px;
                 padding-left: 5px;
                 padding-right: 5px;
