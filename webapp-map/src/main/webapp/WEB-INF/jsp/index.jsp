@@ -124,6 +124,20 @@
 	</div>
 	<div id="loginbar">
     </div>
+    <div id="language">
+            <c:if test="${language == 'fi'}">
+                <a href="./?lang=sv">På svenska</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'sv'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'en'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=sv">På svenska</a>
+            </c:if>
+    </div>
     <div id="menubar">
     </div>
     <div id="divider">
@@ -170,20 +184,6 @@
         </div>
     </div>
 </div>
-<div id="language">
-            <c:if test="${language == 'fi'}">
-                <a href="./?lang=sv">På svenska</a> -
-                <a href="./?lang=en">In English</a>
-            </c:if>
-            <c:if test="${language == 'sv'}">
-                <a href="./?lang=fi">Suomeksi</a> -
-                <a href="./?lang=en">In English</a>
-            </c:if>
-            <c:if test="${language == 'en'}">
-                <a href="./?lang=fi">Suomeksi</a> -
-                <a href="./?lang=sv">På svenska</a>
-            </c:if>
-        </div>
 
 <!-- ############# Javascript ################# -->
 
