@@ -101,6 +101,17 @@
                 color: #FFF;
                 padding: 5px;
             }
+            
+             #language {
+                padding: 0px 10px 0px 16px;
+                color: #CCC;
+            }
+            #language a {
+                color: #FFDE00;
+                font-size: 12px;
+                cursor: pointer;
+                text-decoration: underline;
+            }
 
         }
     </style>
@@ -159,7 +170,20 @@
         </div>
     </div>
 </div>
-
+<div id="language">
+            <c:if test="${language == 'fi'}">
+                <a href="./?lang=sv">På svenska</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'sv'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'en'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=sv">På svenska</a>
+            </c:if>
+        </div>
 
 <!-- ############# Javascript ################# -->
 
