@@ -24,11 +24,9 @@ public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceIbatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
     private static final String MAPFULL = "mapfull";
-/**    private static final String KAPSI_WMS_TAUSTAKARTTA_URL = "http://tiles.kartat.kapsi.fi/taustakartta"; */
+    private static final String TAUSTAKARTTA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
     private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
-/**     private static final String KAPSI_WMS_ORTOKARTTA_URL = "http://tiles.kartat.kapsi.fi/ortokuva"; */
-    private static final String MAASTOKARTTA_NAME = "Maastokartta";
-/** 	private static final String KAPSI_WMS_PERUSKARTTA_URL = "http://tiles.kartat.kapsi.fi/peruskartta"; */
+    private static final String ORTOKUVA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/ortokuva/";
     private static final String ORTOKUVA_NAME = "Ortokuva";
 
 
@@ -57,7 +55,7 @@ public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             }
         }
         // add plugin if not there yet
-/*      if(!found) {
+       if(!found) {
             JSONObject plugin = new JSONObject();
             plugin.put("id", PLUGIN_NAME);
             JSONObject pluginConfig = new JSONObject();
@@ -66,12 +64,12 @@ public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             List<OskariLayer> layers = LAYER_SERVICE.findAll();
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
-                if((TAUSTAKARTTA_NAME.equals(layer.getName()) && KAPSI_WMS_TAUSTAKARTTA_URL.equals(layer.getUrl())) ||
-                        (KAPSI_WMS_ORTOKARTTA_NAME.equals(layer.getName()) && KAPSI_WMS_ORTOKARTTA_URL.equals(layer.getUrl())) ||
-						(KAPSI_WMS_PERUSKARTTA_NAME.equals(layer.getName()) && KAPSI_WMS_PERUSKARTTA_URL.equals(layer.getUrl()))
+                if((TAUSTAKARTTA_NAME.equals(layer.getName()) && TAUSTAKARTTA_URL.equals(layer.getUrl())) ||
+                        (ORTOKUVA_NAME.equals(layer.getName()) && ORTOKUVA_URL.equals(layer.getUrl()))
                         ){
-                    baseLayers.put(Integer.toString(layer.getId())); */
-        if(!found) {
+                    baseLayers.put(Integer.toString(layer.getId())); 
+                    
+        /*        if(!found) {
             JSONObject plugin = new JSONObject();
             plugin.put("id", PLUGIN_NAME);
             JSONObject pluginConfig = new JSONObject();
@@ -83,7 +81,7 @@ public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements Jd
                 		|| (MAASTOKARTTA_NAME.equals(layer.getName())
         				|| (ORTOKUVA_NAME.equals(layer.getName())))
                         ){
-                	baseLayers.put(Integer.toString(layer.getId()));
+                	baseLayers.put(Integer.toString(layer.getId())); */
                 }
             }
 
