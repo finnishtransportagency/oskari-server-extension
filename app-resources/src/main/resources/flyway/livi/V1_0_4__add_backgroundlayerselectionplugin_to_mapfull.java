@@ -19,7 +19,7 @@ import java.util.List;
  * Created by 
  * Marko Kuosmanen on 23.9.2015.
  */
-public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements JdbcMigration {
+public class V1_0_4__add_backgroundlayerselectionplugin_to_mapfull implements JdbcMigration {
     private static final ViewService VIEW_SERVICE = new ViewServiceIbatisImpl();
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceIbatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
