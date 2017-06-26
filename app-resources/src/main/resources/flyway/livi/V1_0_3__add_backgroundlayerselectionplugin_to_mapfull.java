@@ -25,7 +25,7 @@ public class V1_0_3__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
     private static final String MAPFULL = "mapfull";
 /**    private static final String KAPSI_WMS_TAUSTAKARTTA_URL = "http://tiles.kartat.kapsi.fi/taustakartta"; */
-    private static final String TAUSTAKARTTA_NAME = "Taustakartta";
+    private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
 /**     private static final String KAPSI_WMS_ORTOKARTTA_URL = "http://tiles.kartat.kapsi.fi/ortokuva"; */
     private static final String MAASTOKARTTA_NAME = "Maastokartta";
 /** 	private static final String KAPSI_WMS_PERUSKARTTA_URL = "http://tiles.kartat.kapsi.fi/peruskartta"; */
