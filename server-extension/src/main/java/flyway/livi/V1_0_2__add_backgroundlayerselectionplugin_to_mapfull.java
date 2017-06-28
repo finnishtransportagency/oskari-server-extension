@@ -65,12 +65,12 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             List<OskariLayer> layers = LAYER_SERVICE.findAll();
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
-                if((TAUSTAKARTTA_NAME.equals(layer.getName()) && TAUSTAKARTTA_URL.equals(layer.getUrl())) ||
-                        (ORTOKUVA_NAME.equals(layer.getName()) && ORTOKUVA_URL.equals(layer.getUrl())) ||
-                        (MAASTOKARTTA_NAME.equals(layer.getName()) && MAASTOKARTTA_URL.equals(layer.getUrl()))
+                if((TAUSTAKARTTA_NAME.equals(layer.getName())) 
+               			|| (MERIKARTAT_NAME.equals(layer.getName())
+                		|| (ORTOKUVA_NAME.equals(layer.getName())
+        				|| (MAASTOKARTTA_NAME.equals(layer.getName())))
                         ){
-                    baseLayers.put(Integer.toString(layer.getId())); 
-                    
+                	baseLayers.put(Integer.toString(layer.getId()));
                 }
             }
 
