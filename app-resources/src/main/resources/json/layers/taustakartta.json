@@ -23,29 +23,3 @@
   "version": "1.0.0",
   "tileMatrixSetId":"ETRS-TM35FIN"
 }
-
-{
-  "srs_name": "EPSG:3067",
-  "type":"wmtslayer",
-  "url":"http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/ortokuva/",
-  "name":"ortokuva",
-  "organization": "Maanmittauslaitos",
-  "inspiretheme": "Taustakartat",
-  "locale": {
-    "fi": {
-      "name": "Ortokuva"
-    },
-    "sv": {
-      "name": "Ortokuva"
-    },
-    "en": {
-      "name": "Ortokuva"
-    }
-  },
-  "role_permissions": {
-    "Guest" : ["VIEW_LAYER", "VIEW_PUBLISHED"],
-    "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
-  },
-  "version": "1.0.0",
-  "tileMatrixSetId":"ETRS-TM35FIN"
-}
