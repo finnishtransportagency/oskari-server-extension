@@ -16,7 +16,7 @@ import java.sql.Connection;
 import java.util.List;
 
 /**
- * Created by Marko Kuosmanen on 23.9.2015.
+ * Created by Marko Kuosmanen on 23.9.2015. Edited by Olli Jakobsson on 28.6.2017
  */
 public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements JdbcMigration {
     private static final ViewService VIEW_SERVICE = new ViewServiceIbatisImpl();
@@ -26,9 +26,10 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     
     private static final String TAUSTAKARTTA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
     private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
-    private static final String ORTOKUVA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/ortokuva/";
+    private static final String ORTOKUVA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
     private static final String ORTOKUVA_NAME = "Ortokuva";
-
+    private static final String MAASTOKARTTA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
+    private static final String MAASTOKARTTA_NAME = "Maastokartta";
 
     public void migrate(Connection connection)
             throws Exception {
@@ -65,7 +66,8 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
                 if((TAUSTAKARTTA_NAME.equals(layer.getName()) && TAUSTAKARTTA_URL.equals(layer.getUrl())) ||
-                        (ORTOKUVA_NAME.equals(layer.getName()) && ORTOKUVA_URL.equals(layer.getUrl()))
+                        (ORTOKUVA_NAME.equals(layer.getName()) && ORTOKUVA_URL.equals(layer.getUrl())) ||
+                        (MAASTOKARTTA_NAME.equals(layer.getName()) && MAASTOKARTTA_URL.equals(layer.getUrl()))
                         ){
                     baseLayers.put(Integer.toString(layer.getId())); 
                     
