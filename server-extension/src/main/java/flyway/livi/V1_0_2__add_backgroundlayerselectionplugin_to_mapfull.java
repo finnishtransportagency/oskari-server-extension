@@ -28,8 +28,8 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
     private static final String ORTOKUVA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
     private static final String ORTOKUVA_NAME = "Ortokuva";
-    private static final String MAASTOKARTTA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
-    private static final String MAASTOKARTTA_NAME = "Maastokartta";
+    private static final String MERIKARTAT_URL = ""http://liviras-vip.vally.local/rasteripalvelu/wmts?request=getcapabilities"";
+    private static final String MERIKARTAT_NAME = "liikennevirasto:Merikarttasarjat";
 
     public void migrate(Connection connection)
             throws Exception {
