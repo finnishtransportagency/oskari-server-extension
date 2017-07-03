@@ -66,8 +66,8 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
                 if((TAUSTAKARTTA_NAME.equals(layer.getName())) 
-               			|| (MERIKARTAT_NAME.equals(layer.getName())
-                		|| (ORTOKUVA_NAME.equals(layer.getName())
+               			|| (MERIKARTAT_NAME.equals(layer.getName()))
+                		|| (ORTOKUVA_NAME.equals(layer.getName()))
         				|| (MAASTOKARTTA_NAME.equals(layer.getName())))
                         ){
                 	baseLayers.put(Integer.toString(layer.getId()));
