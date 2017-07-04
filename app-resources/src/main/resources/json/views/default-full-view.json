@@ -37,6 +37,7 @@
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.PanButtons" },
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapstats.plugin.StatsLayerPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.coordinatetool.plugin.CoordinateToolPlugin" },
                     { "id" : "Oskari.mapframework.mapmodule.VectorLayerPlugin" }
                 ],
                 "layers": []
