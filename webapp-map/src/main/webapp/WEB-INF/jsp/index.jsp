@@ -108,7 +108,7 @@
             }
             #language a {
                 color: #FFFFFF;
-                padding: 0px 10px 0px 16px;
+                padding: 0px 5px 0px 5px;
                 font-size: 12px;
                 cursor: pointer;
                 text-decoration: underline;
