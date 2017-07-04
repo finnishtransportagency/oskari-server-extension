@@ -51,7 +51,7 @@
 			#livi-logo {
 				height:107px;
 				width:107px;
-				margin-left:29px;
+				margin-left:30px;
 				margin-top:5px;
 				padding-bottom:5px;
 				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
@@ -102,12 +102,13 @@
                 padding: 5px;
             }
             
-             #language {
+            #language {
                 padding: 0px 10px 0px 16px;
                 color: #CCC;
             }
             #language a {
                 color: #FFFFFF;
+                padding: 0px 10px 0px 16px;
                 font-size: 12px;
                 cursor: pointer;
                 text-decoration: underline;
