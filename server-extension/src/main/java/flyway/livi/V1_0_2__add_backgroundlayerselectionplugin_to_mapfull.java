@@ -22,15 +22,10 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final ViewService VIEW_SERVICE = new ViewServiceIbatisImpl();
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceIbatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
-    private static final String MAPFULL = "mapfull";
-    
-    private static final String TAUSTAKARTTA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
+    private static final String MAPFULL = "mapfull"; 
     private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
-    private static final String ORTOKUVA_URL = "http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/";
     private static final String ORTOKUVA_NAME = "Ortokuva";
-    private static final String MERIKARTAT_URL = "http://liviras-vip.vally.local/rasteripalvelu/wmts?request=getcapabilities";
     private static final String MERIKARTAT_NAME = "Merikarttasarjat";
-
     public void migrate(Connection connection)
             throws Exception {
         View view = VIEW_SERVICE.getViewWithConf(VIEW_SERVICE.getDefaultViewId());
@@ -65,8 +60,8 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
                 if((TAUSTAKARTTA_NAME.equals(layer.getName())) 
-               			|| (MERIKARTAT_NAME.equals(layer.getName())
-                		|| (ORTOKUVA_NAME.equals(layer.getName())))
+               			|| (ORTOKUVA_NAME.equals(layer.getName())
+                		|| (MERIKARTAT_NAME.equals(layer.getName())))
                         ){
                 	baseLayers.put(Integer.toString(layer.getId()));
                 }

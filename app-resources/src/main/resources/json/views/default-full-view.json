@@ -38,6 +38,11 @@
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapstats.plugin.StatsLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.coordinatetool.plugin.CoordinateToolPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin",
+       					"config" : {
+          				"baseLayers": ["1", "2", "3"]
+     				   }
+     				   },
                     { "id" : "Oskari.mapframework.mapmodule.VectorLayerPlugin" }
                 ],
                 "layers": []
@@ -46,7 +51,7 @@
               "east": "517620",
               "north": "6874042",
               "selectedLayers": [],
-              "zoom": 1
+              "zoom": 2
             }
         },
         { "id" : "divmanazer" },
@@ -63,11 +68,8 @@
         { "id" : "search" },
         { "id" : "metadatacatalogue" },
         { "id" : "layerselector2" },
-        { "id" : "layerselection2" },
-        
-//			"id" : "coordinatedisplay",
-
-    	{"id": "coordinatetool",
+        { "id" : "layerselection2" },  
+    	{ "id" : "coordinatetool",
    		 "config": {
      	 "showEmergencyCallMessage": true,
      	 "projectionShowFormat": {
@@ -88,15 +90,10 @@
    	 }
 		},
         { "id" : "metadataflyout" },
-        
-
         { "id" : "maplegend" },
         { "id" : "userguide" },
-
         { "id" : "printout" },
-
-        {
-            "id" : "featuredata2",
+        { "id" : "featuredata2",
             "config": {
                 "selectionTools": true
             }
