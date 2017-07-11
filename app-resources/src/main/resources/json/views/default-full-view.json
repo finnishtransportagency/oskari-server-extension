@@ -37,6 +37,9 @@
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.PanButtons" },
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.FullScreenPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapstats.plugin.StatsLayerPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.mapanalysis.plugin.AnalysisLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.coordinatetool.plugin.CoordinateToolPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin",
        					"config" : {
@@ -48,8 +51,8 @@
                 "layers": []
             },
             "state" : {
-              "east": "517620",
-              "north": "6874042",
+              "east": "431620",
+              "north": "6812540",
               "selectedLayers": [],
               "zoom": 2
             }
@@ -68,31 +71,35 @@
         { "id" : "search" },
         { "id" : "metadatacatalogue" },
         { "id" : "layerselector2" },
-        { "id" : "layerselection2" },  
-    	{ "id" : "coordinatetool",
-   		 "config": {
-     	 "showEmergencyCallMessage": true,
-     	 "projectionShowFormat": {
-     	   "decimals": 3,
-     	   "EPSG:3067": {
-     	     "decimals": 3,
-     	     "format": "degrees"
-     	   },
-     	   "LATLON:kkj": {
-     	     "decimals": 3,
-     	     "format": "degrees"
-    	    },
-    	    "format": "metric"
-    	  },
-      "supportedProjections": ["EPSG:3067", "NLSFI:etrs_gk", "NLSFI:ykj", "EPSG:4258", "LATLON:kkj", "EPSG:3046", "EPSG:3048", "EPSG:3873", "EPSG:3874", "EPSG:3875", "EPSG:3876", "EPSG:3877", "EPSG:3878", "EPSG:3879", "EPSG:3880", "EPSG:3881", "EPSG:3882", "EPSG:3883", "EPSG:3884", "EPSG:3885"],
-      "isReverseGeocode": true,
-      "reverseGeocodingIds": "WHAT3WORDS_CHANNEL"
-   	 }
-		},
+        { "id" : "layerselection2" },
         { "id" : "metadataflyout" },
+        { "id" : "personaldata" },
+        { "id" : "publisher2" },
         { "id" : "maplegend" },
         { "id" : "userguide" },
         { "id" : "printout" },
+        { "id" : "analyse" },
+        { "id" : "myplacesimport" },
+        { "id" : "coordinatetool",
+    "config": {
+      "showEmergencyCallMessage": true,
+      "projectionShowFormat": {
+        "decimals": 3,
+        "EPSG:4258": {
+          "decimals": 3,
+          "format": "degrees"
+        },
+        "LATLON:kkj": {
+          "decimals": 3,
+          "format": "degrees"
+        },
+        "format": "metric"
+      },
+      "supportedProjections": ["EPSG:3067", "NLSFI:etrs_gk", "NLSFI:ykj", "EPSG:4258", "LATLON:kkj", "EPSG:3046", "EPSG:3048", "EPSG:3873", "EPSG:3874", "EPSG:3875", "EPSG:3876", "EPSG:3877", "EPSG:3878", "EPSG:3879", "EPSG:3880", "EPSG:3881", "EPSG:3882", "EPSG:3883", "EPSG:3884", "EPSG:3885"],
+      "isReverseGeocode": true,
+      "reverseGeocodingIds": "WHAT3WORDS_CHANNEL"
+    }
+  },
         { "id" : "featuredata2",
             "config": {
                 "selectionTools": true
