@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * Created by PHELESUO on 4.2.2016. Edited by Olli Jakobsson on 11.7.2017
  */
-public class V1_6__add_coordinatetool_config_supportedprojections implements JdbcMigration  {
+public class V1_0_4__add_coordinatetool_config_supportedprojections implements JdbcMigration  {
     private static final String DEFAULT_LIVI_VIEW = "Default View";
     private static final String DEFAULT_PROJECTION = "EPSG:3067";
 
@@ -42,7 +42,7 @@ public class V1_6__add_coordinatetool_config_supportedprojections implements Jdb
     }
 
     private String getDefaultViewByName(Connection conn, String viewName) throws SQLException {
-        final String sql = "SELECT uuid FROM portti_view where type = 'DEFAULT' AND page='elf_guest' and application='elf_guest' and name ='"+viewName+"'";
+        final String sql = "SELECT uuid FROM portti_view where type = 'DEFAULT' AND page='index' and application='servlet' and name ='"+viewName+"'";
         String uuid = null;
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             try (ResultSet rs = statement.executeQuery()) {
