@@ -22,7 +22,7 @@ public class V1_0_4__add_coordinatetool_config_supportedprojections implements J
         /*projection - viewName*/
         HashMap<String, String> names = new HashMap<String, String>();
         names.put(DEFAULT_PROJECTION, DEFAULT_LIVI_VIEW);
-        names.put(DEFAULT_PROJECTION_EPSG_3067, DEFAULT_LIVI_VIEW_EPSG_3067);
+      /*  names.put(DEFAULT_PROJECTION_EPSG_3067, DEFAULT_LIVI_VIEW_EPSG_3067); */
 
         JSONObject configJSON = new JSONObject();
         JSONObject supportedProjections = new JSONObject();
