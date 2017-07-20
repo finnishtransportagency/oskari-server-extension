@@ -81,24 +81,18 @@
         { "id" : "analyse" },
         { "id" : "myplacesimport" },
         { "id" : "coordinatetool",
-    "config": {
+   	"config": {
       "showEmergencyCallMessage": true,
       "projectionShowFormat": {
-        "decimals": 3,
-        "EPSG:4258": {
-          "decimals": 3,
-          "format": "degrees"
-        },
-        "LATLON:kkj": {
-          "decimals": 3,
+        "decimals": 0,
+        "EPSG:3067": {
+          "decimals": 0,
           "format": "degrees"
         },
         "format": "metric"
       },
-      "supportedProjections": ["EPSG:3067", "NLSFI:etrs_gk", "NLSFI:ykj", "EPSG:4258", "LATLON:kkj", "EPSG:3046", "EPSG:3048", "EPSG:3873", "EPSG:3874", "EPSG:3875", "EPSG:3876", "EPSG:3877", "EPSG:3878", "EPSG:3879", "EPSG:3880", "EPSG:3881", "EPSG:3882", "EPSG:3883", "EPSG:3884", "EPSG:3885"],
-      "isReverseGeocode": true,
-      "reverseGeocodingIds": "WHAT3WORDS_CHANNEL"
-    }
+      "supportedProjections": ["EPSG:3067"],
+      }
   },
         { "id" : "featuredata2",
             "config": {

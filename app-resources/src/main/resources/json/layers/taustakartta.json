@@ -21,5 +21,6 @@
     "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
   },
   "version": "1.0.0",
-  "tileMatrixSetId":"ETRS-TM35FIN"
+  "tileMatrixSetId":"ETRS-TM35FIN",
+  "attributes": "forceProxy: true"
 }
