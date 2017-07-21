@@ -85,10 +85,6 @@
       "showEmergencyCallMessage": true,
       "projectionShowFormat": {
         "decimals": 0,
-        "EPSG:3067": {
-          "decimals": 0,
-          "format": "degrees"
-        },
         "format": "metric"
       },
       "supportedProjections": ["EPSG:3067"],

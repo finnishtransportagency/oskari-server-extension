@@ -1,4 +1,4 @@
-package flyway.elf;
+package flyway.livi;
 import fi.nls.oskari.domain.map.view.View;
 import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
 import org.json.JSONObject;
