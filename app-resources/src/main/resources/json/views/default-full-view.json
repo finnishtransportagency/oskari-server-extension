@@ -80,16 +80,7 @@
         { "id" : "printout" },
         { "id" : "analyse" },
         { "id" : "myplacesimport" },
-        { "id" : "coordinatetool",
-   	"config": {
-      "showEmergencyCallMessage": true,
-      "projectionShowFormat": {
-        "decimals": 0,
-        "format": "metric"
-      },
-      "supportedProjections": ["EPSG:3067"],
-      }
-  },
+        { "id" : "coordinatetool" },
         { "id" : "featuredata2",
             "config": {
                 "selectionTools": true
