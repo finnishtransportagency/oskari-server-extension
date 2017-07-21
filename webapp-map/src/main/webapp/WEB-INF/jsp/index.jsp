@@ -24,10 +24,7 @@
             rel="stylesheet"
             type="text/css"
             href="/Oskari${path}/icons.css"/>
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari${path}/css/overwritten.css"/>
+    
     <style type="text/css">
         @media screen {
             body {
@@ -57,11 +54,6 @@
 				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
 				cursor:pointer;
 			}
-
-            #contentMap {
-                height: 100%;
-                margin-left: 120px;
-            }
 
             #login {
                 margin-left: 5px;
@@ -115,6 +107,11 @@
 
         }
     </style>
+    
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Oskari${path}/css/overwritten.css"/>
     <!-- ############# /css ################# -->
 </head>
 <body>
