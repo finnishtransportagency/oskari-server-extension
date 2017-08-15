@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liikennevirasto - Oskari</title>
+    <title>Liikennevirasto - latauspalvelu</title>
      <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js">
