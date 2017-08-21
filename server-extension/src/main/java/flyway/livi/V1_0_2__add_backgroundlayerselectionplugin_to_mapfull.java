@@ -24,7 +24,6 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
     private static final String MAPFULL = "mapfull"; 
     private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
-    private static final String ORTOKUVA_NAME = "Ortokuva";
     private static final String MERIKARTAT_NAME = "Merikarttasarjat";
     public void migrate(Connection connection)
             throws Exception {
@@ -60,7 +59,6 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
             for (int i = 0; i < layers.size(); i++) {
                 OskariLayer layer = layers.get(i);
                 if((TAUSTAKARTTA_NAME.equals(layer.getName())) 
-               			|| (ORTOKUVA_NAME.equals(layer.getName())
                 		|| (MERIKARTAT_NAME.equals(layer.getName())))
                         ){
                 	baseLayers.put(Integer.toString(layer.getId()));
