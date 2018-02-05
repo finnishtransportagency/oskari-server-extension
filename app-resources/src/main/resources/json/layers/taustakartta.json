@@ -1,7 +1,7 @@
 {
   "srs_name": "EPSG:3067",
   "type":"wmtslayer",
-  "url":"https://karttakuva.maanmittauslaitos.fi/maasto/wmts",
+  "url":"http://liviras-vip.vally.local/rasteripalvelu-mml/wmts/maasto/1.0.0/maastokartta/",
   "name":"taustakartta",
   "organization": "Maanmittauslaitos",
   "inspiretheme": "Taustakartat",
@@ -13,7 +13,7 @@
       "name": "Backgrundskartserie"
     },
     "en": {
-      "name": "Background map serie"
+      "name": "Background map series"
     }
   },
   "role_permissions": {
@@ -21,5 +21,6 @@
     "User" : ["VIEW_LAYER", "VIEW_PUBLISHED", "PUBLISH"]
   },
   "version": "1.0.0",
-  "tileMatrixSetId":"ETRS-TM35FIN"
+  "tileMatrixSetId":"ETRS-TM35FIN",
+  "attributes": "forceProxy: true"
 }

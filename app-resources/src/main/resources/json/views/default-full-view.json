@@ -40,15 +40,21 @@
                     { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapanalysis.plugin.AnalysisLayerPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.coordinatetool.plugin.CoordinateToolPlugin" },
+                    { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin",
+       					"config" : {
+          				"baseLayers": ["1", "2", "3"]
+     				   }
+     				   },
                     { "id" : "Oskari.mapframework.mapmodule.VectorLayerPlugin" }
                 ],
                 "layers": []
             },
             "state" : {
-              "east": "517620",
-              "north": "6874042",
+              "east": "431620",
+              "north": "6812540",
               "selectedLayers": [],
-              "zoom": 1
+              "zoom": 2
             }
         },
         { "id" : "divmanazer" },
@@ -66,23 +72,16 @@
         { "id" : "metadatacatalogue" },
         { "id" : "layerselector2" },
         { "id" : "layerselection2" },
-        {
-			"id" : "coordinatedisplay",
-			"config": {
-				"roundToDecimals": 6
-			}
-		},
         { "id" : "metadataflyout" },
         { "id" : "personaldata" },
         { "id" : "publisher2" },
         { "id" : "maplegend" },
         { "id" : "userguide" },
-        { "id" : "myplaces2" },
         { "id" : "printout" },
         { "id" : "analyse" },
         { "id" : "myplacesimport" },
-        {
-            "id" : "featuredata2",
+        { "id" : "coordinatetool" },
+        { "id" : "featuredata2",
             "config": {
                 "selectionTools": true
             }

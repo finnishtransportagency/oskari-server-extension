@@ -5,7 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liikennevirasto - Oskari - ${viewName}</title>
+    <title>Liikennevirasto - latauspalvelu</title>
+     <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js">
     </script>
@@ -23,10 +24,7 @@
             rel="stylesheet"
             type="text/css"
             href="/Oskari${path}/icons.css"/>
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari${path}/css/overwritten.css"/>
+    
     <style type="text/css">
         @media screen {
             body {
@@ -43,24 +41,19 @@
                 height: 100%;
                 position: absolute;
                 top: 0;
-                width: 153px;
+                width: 120px;
                 z-index: 2;
             }
 
 			#livi-logo {
-				height:183px;
-				width:100px;
-				margin-left:15px;
+				height:107px;
+				width:107px;
+				margin-left:30px;
 				margin-top:5px;
 				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/logo.png") no-repeat;
+				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
 				cursor:pointer;
 			}
-
-            #contentMap {
-                height: 100%;
-                margin-left: 170px;
-            }
 
             #login {
                 margin-left: 5px;
@@ -100,9 +93,25 @@
                 color: #FFF;
                 padding: 5px;
             }
+            
+            #language {
+                padding: 0px 10px 0px 16px;
+                color: #CCC;
+            }
+            #language a {
+                color: #FFFFFF;
+                font-size: 12px;
+                cursor: pointer;
+                text-decoration: underline;
+            }
 
         }
     </style>
+    
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Oskari${path}/css/overwritten.css"/>
     <!-- ############# /css ################# -->
 </head>
 <body>
@@ -111,6 +120,20 @@
     <div id="livi-logo" onclick="window.open('http://www.liikennevirasto.fi/');return false;">
 	</div>
 	<div id="loginbar">
+    </div>
+    <div id="language">
+            <c:if test="${language == 'fi'}">
+                <a href="./?lang=sv">På svenska</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'sv'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=en">In English</a>
+            </c:if>
+            <c:if test="${language == 'en'}">
+                <a href="./?lang=fi">Suomeksi</a> -
+                <a href="./?lang=sv">På svenska</a>
+            </c:if>
     </div>
     <div id="menubar">
     </div>
@@ -135,6 +158,7 @@
                     <a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message code="login.sso" text="SSO login" /></a><hr />
                 </c:if>
                 <c:if test="${!empty _login_uri && !empty _login_field_user}">
+                	<p style="color: #FFFFFF;padding-bottom: 5px;">Ylläpidon kirjautuminen</p>
                     <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required>
@@ -158,7 +182,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- ############# Javascript ################# -->
 
