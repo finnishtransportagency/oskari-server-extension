@@ -1,8 +1,16 @@
 package flyway.livi;
 
+import fi.nls.oskari.domain.map.OskariLayer;
+import fi.nls.oskari.domain.map.view.Bundle;
+import fi.nls.oskari.domain.map.view.View;
+import fi.nls.oskari.map.layer.OskariLayerService;
+import fi.nls.oskari.map.layer.OskariLayerServiceIbatisImpl;
+import fi.nls.oskari.map.view.ViewService;
+import fi.nls.oskari.map.view.ViewServiceIbatisImpl;
+import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
 import fi.nls.oskari.util.FlywayHelper;
 import fi.nls.oskari.util.PropertyUtil;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+
 
 import java.sql.Connection;
 import java.util.List;
@@ -14,7 +22,7 @@ import java.util.List;
  * download-basket for all default and user views.
  *
  */
-public class V1_0_12__add_download_basket_to_views implements JdbcMigration {
+public class V1_0_6__add_download_basket_to_views implements JdbcMigration {
 
     private static final String BUNDLE_ID = "download-basket";
 

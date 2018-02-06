@@ -1,6 +1,15 @@
 package flyway.livi;
+
+import fi.nls.oskari.domain.map.OskariLayer;
+import fi.nls.oskari.domain.map.view.Bundle;
 import fi.nls.oskari.domain.map.view.View;
+import fi.nls.oskari.map.layer.OskariLayerService;
+import fi.nls.oskari.map.layer.OskariLayerServiceIbatisImpl;
+import fi.nls.oskari.map.view.ViewService;
+import fi.nls.oskari.map.view.ViewServiceIbatisImpl;
 import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import fi.nls.oskari.util.FlywayHelper;
+import fi.nls.oskari.util.PropertyUtil;
 import org.json.JSONObject;
 
 import java.sql.Connection;
