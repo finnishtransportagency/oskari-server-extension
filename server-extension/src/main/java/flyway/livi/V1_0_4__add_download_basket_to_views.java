@@ -19,7 +19,7 @@ public class V1_0_4__add_download_basket_to_views implements JdbcMigration {
     private static final String BUNDLE_ID = "download-basket";
 
     public void migrate(Connection connection) throws Exception {
-        if (PropertyUtil.getOptional("flyway.sample.1_0_12.skip", true)) {
+        if (PropertyUtil.getOptional("flyway.livi.1_0_4.skip", true)) {
             return;
         }
 
