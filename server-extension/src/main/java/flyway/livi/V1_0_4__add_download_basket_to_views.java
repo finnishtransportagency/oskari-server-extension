@@ -14,7 +14,7 @@ import java.util.List;
  * download-basket for all default and user views.
  *
  */
-public class V1_0_6__add_download_basket_to_views implements JdbcMigration {
+public class V1_0_4__add_download_basket_to_views implements JdbcMigration {
 
     private static final String BUNDLE_ID = "download-basket";
 
