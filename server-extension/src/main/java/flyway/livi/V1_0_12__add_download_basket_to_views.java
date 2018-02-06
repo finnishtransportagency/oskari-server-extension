@@ -1,4 +1,4 @@
-package flyway.sample;
+package flyway.livi;
 
 import fi.nls.oskari.util.FlywayHelper;
 import fi.nls.oskari.util.PropertyUtil;
