@@ -30,6 +30,7 @@
 		<dependency>
 			<groupId>fi.nls.oskari</groupId>
 			<artifactId>download-basket</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
