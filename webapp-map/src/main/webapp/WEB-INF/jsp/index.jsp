@@ -137,8 +137,8 @@
     </div>
     <div id="menubar">
     </div>
- 	<div>
-       <a href="https://aineistot.liikennevirasto.fi/digiroad/latest/"> DIGIROAD</a>
+ 	<div id="DIGIROAD">
+       <a href="https://aineistot.liikennevirasto.fi/digiroad/latest/" target="_blank"></a>
  	</div>
     <div id="divider">
     </div>
