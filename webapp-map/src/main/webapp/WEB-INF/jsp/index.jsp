@@ -1,226 +1,230 @@
-<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liikennevirasto - latauspalvelu</title>
-     <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
+<title>Liikennevirasto - latauspalvelu</title>
+<!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js">
-    </script>
+<script type="text/javascript"
+	src="//code.jquery.com/jquery-1.7.2.min.js">
+	
+</script>
 
-    <!-- ############# css ################# -->
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari/resources/css/forms.css"/>
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari/resources/css/portal.css"/>
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari${path}/icons.css"/>
-    
-    <style type="text/css">
-        @media screen {
-            body {
-                margin: 0;
-                padding: 0;
-            }
+<!-- ############# css ################# -->
+<link rel="stylesheet" type="text/css"
+	href="/Oskari/resources/css/forms.css" />
+<link rel="stylesheet" type="text/css"
+	href="/Oskari/resources/css/portal.css" />
+<link rel="stylesheet" type="text/css" href="/Oskari${path}/icons.css" />
 
-            #mapdiv {
-                width: 100%;
-            }
+<style type="text/css">
+@media screen {
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	#mapdiv {
+		width: 100%;
+	}
+	#maptools {
+		background-color: #333438;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		width: 120px;
+		z-index: 2;
+	}
+	#livi-logo {
+		height: 107px;
+		width: 107px;
+		margin-left: 30px;
+		margin-top: 5px;
+		padding-bottom: 5px;
+		background:
+			url("/Oskari/applications/livi/servlet/images/livilogo107.png")
+			no-repeat;
+		cursor: pointer;
+	}
+	#login {
+		margin-left: 5px;
+	}
+	#login input[type="text"], #login input[type="password"] {
+		width: 90%;
+		margin-bottom: 5px;
+		background-image: url("/Oskari/resources/images/forms/input_shadow.png");
+		background-repeat: no-repeat;
+		padding-left: 5px;
+		padding-right: 5px;
+		border: 1px solid #B7B7B7;
+		border-radius: 4px 4px 4px 4px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+		color: #878787;
+		font: 13px/100% Arial, sans-serif;
+	}
+	#login input[type="submit"] {
+		width: 90%;
+		margin-bottom: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+		border: 1px solid #B7B7B7;
+		border-radius: 4px 4px 4px 4px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+		color: #878787;
+		font: 13px/100% Arial, sans-serif;
+	}
+	#login p.error {
+		font-weight: bold;
+		color: red;
+		margin-bottom: 10px;
+	}
+	#login a {
+		color: #FFF;
+		padding: 5px;
+	}
+	#language {
+		padding: 0px 10px 0px 16px;
+		color: #CCC;
+	}
+	#language a {
+		color: #FFFFFF;
+		font-size: 12px;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+</style>
 
-            #maptools {
-                background-color: #333438;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                width: 120px;
-                z-index: 2;
-            }
-
-			#livi-logo {
-				height:107px;
-				width:107px;
-				margin-left:30px;
-				margin-top:5px;
-				padding-bottom:5px;
-				background:url("/Oskari/applications/livi/servlet/images/livilogo107.png") no-repeat;
-				cursor:pointer;
-			}
-
-            #login {
-                margin-left: 5px;
-            }
-
-            #login input[type="text"], #login input[type="password"] {
-                width: 90%;
-                margin-bottom: 5px;
-                background-image: url("/Oskari/resources/images/forms/input_shadow.png");
-                background-repeat: no-repeat;
-                padding-left: 5px;
-                padding-right: 5px;
-                border: 1px solid #B7B7B7;
-                border-radius: 4px 4px 4px 4px;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
-                color: #878787;
-                font: 13px/100% Arial,sans-serif;
-            }
-            #login input[type="submit"] {
-                width: 90%;
-                margin-bottom: 5px;
-                padding-left: 5px;
-                padding-right: 5px;
-                border: 1px solid #B7B7B7;
-                border-radius: 4px 4px 4px 4px;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
-                color: #878787;
-                font: 13px/100% Arial,sans-serif;
-            }
-            #login p.error {
-                font-weight: bold;
-                color : red;
-                margin-bottom: 10px;
-            }
-
-            #login a {
-                color: #FFF;
-                padding: 5px;
-            }
-            
-            #language {
-                padding: 0px 10px 0px 16px;
-                color: #CCC;
-            }
-            #language a {
-                color: #FFFFFF;
-                font-size: 12px;
-                cursor: pointer;
-                text-decoration: underline;
-            }
-
-        }
-    </style>
-    
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari${path}/css/overwritten.css"/>
-    <!-- ############# /css ################# -->
+<link rel="stylesheet" type="text/css"
+	href="/Oskari${path}/css/overwritten.css" />
+<!-- ############# /css ################# -->
 </head>
 <body>
 
-<nav id="maptools">
-    <div id="livi-logo" onclick="window.open('http://www.liikennevirasto.fi/');return false;">
-	</div>
-	<div id="loginbar">
-    </div>
-    <div id="language">
-            <c:if test="${language == 'fi'}">
-                <a href="./?lang=sv">På svenska</a> -
+	<nav id="maptools">
+		<div id="livi-logo"
+			onclick="window.open('http://www.liikennevirasto.fi/');return false;">
+		</div>
+		<div id="loginbar"></div>
+		<div id="language">
+			<c:if test="${language == 'fi'}">
+				<a href="./?lang=sv">På svenska</a> -
                 <a href="./?lang=en">In English</a>
-            </c:if>
-            <c:if test="${language == 'sv'}">
-                <a href="./?lang=fi">Suomeksi</a> -
+			</c:if>
+			<c:if test="${language == 'sv'}">
+				<a href="./?lang=fi">Suomeksi</a> -
                 <a href="./?lang=en">In English</a>
-            </c:if>
-            <c:if test="${language == 'en'}">
-                <a href="./?lang=fi">Suomeksi</a> -
+			</c:if>
+			<c:if test="${language == 'en'}">
+				<a href="./?lang=fi">Suomeksi</a> -
                 <a href="./?lang=sv">På svenska</a>
-            </c:if>
-    </div>
-    <div id="menubar">
-    </div>
- 	<div id="DIGIROAD">
-       <a href="https://aineistot.liikennevirasto.fi/digiroad/latest/" target="_blank"></a>
- 	</div>
-    <div id="divider">
-    </div>
-    <div id="toolbar">
-    </div>
-    <div id="login">
-        <c:choose>
-            <c:when test="${!empty loginState}">
-                <p class="error"><spring:message code="invalid_password_or_username" text="Invalid password or username!" /></p>
-            </c:when>
-        </c:choose>
-        <c:choose>
-            <%-- If logout url is present - so logout link --%>
-            <c:when test="${!empty _logout_uri}">
-                <a href="${pageContext.request.contextPath}${_logout_uri}"><spring:message code="logout" text="Logout" /></a>
-            </c:when>
-            <%-- Otherwise show appropriate logins --%>
-            <c:otherwise>
-                <c:if test="${!empty _login_uri_saml}">
-                    <a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message code="login.sso" text="SSO login" /></a><hr />
-                </c:if>
-                <c:if test="${!empty _login_uri && !empty _login_field_user}">
-                	<p style="color: #FFFFFF;padding-bottom: 5px;">Ylläpidon kirjautuminen</p>
-                    <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
-                        <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
-                               required>
-                        <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
-                        <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
-                    </form>
-                </c:if>
-            </c:otherwise>
-        </c:choose>
-    </div>
-</nav>
-<div id="contentMap" class="oskariui container-fluid">
-    <div id="menutoolbar" class="container-fluid"></div>
-    <div class="row-fluid oskariui-mode-content" style="height: 100%; background-color:white;">
-        <div class="oskariui-left"></div>
-        <div class="span12 oskariui-center" style="height: 100%; margin: 0;">
-            <div id="mapdiv"></div>
-        </div>
-        <div class="oskari-closed oskariui-right">
-            <div id="mapdivB"></div>
-        </div>
-    </div>
-</div>
+			</c:if>
+		</div>
+		<div id="menubar"></div>
+		<div class="oskari-tile oskari-tile-closed digiroad"
+			style="display: block;">
+			<div class="oskari-tile-title">
+				<a href="https://aineistot.liikennevirasto.fi/digiroad/latest/"
+					target="_blank"
+					style="color: white; font-weight: bold; font-size: 11px; text-align: left; text-transform: uppercase; text-decoration: none;">DIGIROAD</a>
+			</div>
+			<div class="oskari-tile-status"></div>
+		</div>
+		<div id="divider"></div>
+		<div id="toolbar"></div>
+		<div id="login">
+			<c:choose>
+				<c:when test="${!empty loginState}">
+					<p class="error">
+						<spring:message code="invalid_password_or_username"
+							text="Invalid password or username!" />
+					</p>
+				</c:when>
+			</c:choose>
+			<c:choose>
+				<%-- If logout url is present - so logout link --%>
+				<c:when test="${!empty _logout_uri}">
+					<a href="${pageContext.request.contextPath}${_logout_uri}"><spring:message
+							code="logout" text="Logout" /></a>
+				</c:when>
+				<%-- Otherwise show appropriate logins --%>
+				<c:otherwise>
+					<c:if test="${!empty _login_uri_saml}">
+						<a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message
+								code="login.sso" text="SSO login" /></a>
+						<hr />
+					</c:if>
+					<c:if test="${!empty _login_uri && !empty _login_field_user}">
+						<p style="color: #FFFFFF; padding-bottom: 5px;">Ylläpidon
+							kirjautuminen</p>
+						<form action='${pageContext.request.contextPath}${_login_uri}'
+							method="post" accept-charset="UTF-8">
+							<input size="16" id="username" name="${_login_field_user}"
+								type="text"
+								placeholder="<spring:message code="username" text="Username" />"
+								autofocus required> <input size="16" id="password"
+								name="${_login_field_pass}" type="password"
+								placeholder="<spring:message code="password" text="Password" />"
+								required> <input type="submit" id="submit"
+								value="<spring:message code="login" text="Log in" />">
+						</form>
+					</c:if>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</nav>
+	<div id="contentMap" class="oskariui container-fluid">
+		<div id="menutoolbar" class="container-fluid"></div>
+		<div class="row-fluid oskariui-mode-content"
+			style="height: 100%; background-color: white;">
+			<div class="oskariui-left"></div>
+			<div class="span12 oskariui-center" style="height: 100%; margin: 0;">
+				<div id="mapdiv"></div>
+			</div>
+			<div class="oskari-closed oskariui-right">
+				<div id="mapdivB"></div>
+			</div>
+		</div>
+	</div>
 
-<!-- ############# Javascript ################# -->
+	<!-- ############# Javascript ################# -->
 
-<!--  OSKARI -->
+	<!--  OSKARI -->
 
-<script type="text/javascript">
-    var ajaxUrl = '${ajaxUrl}';
-    var controlParams = ${controlParams};
-</script>
+	<script type="text/javascript">
+		var ajaxUrl = '${ajaxUrl}';
+		var controlParams = $
+		{
+			controlParams
+		};
+	</script>
 
-<script type="text/javascript"
-        src="/Oskari/bundles/bundle.js">
-</script>
+	<script type="text/javascript" src="/Oskari/bundles/bundle.js">
+		
+	</script>
 
-<c:if test="${preloaded}">
-    <!-- Pre-compiled application JS, empty unless created by build job -->
-    <script type="text/javascript"
-            src="/Oskari${path}/oskari.min.js">
-    </script>
-    <!-- Minified CSS for preload -->
-    <link
-            rel="stylesheet"
-            type="text/css"
-            href="/Oskari${path}/oskari.min.css"
-            />
-    <%--language files --%>
-    <script type="text/javascript"
-            src="/Oskari${path}/oskari_lang_${language}.js">
-    </script>
-</c:if>
+	<c:if test="${preloaded}">
+		<!-- Pre-compiled application JS, empty unless created by build job -->
+		<script type="text/javascript" src="/Oskari${path}/oskari.min.js">
+			
+		</script>
+		<!-- Minified CSS for preload -->
+		<link rel="stylesheet" type="text/css"
+			href="/Oskari${path}/oskari.min.css" />
+		<%--language files --%>
+		<script type="text/javascript"
+			src="/Oskari${path}/oskari_lang_${language}.js">
+			
+		</script>
+	</c:if>
 
-<script type="text/javascript"
-        src="/Oskari${path}/index.js">
-</script>
+	<script type="text/javascript" src="/Oskari${path}/index.js">
+		
+	</script>
 
 
-<!-- ############# /Javascript ################# -->
+	<!-- ############# /Javascript ################# -->
 </body>
 </html>
