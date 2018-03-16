@@ -131,14 +131,14 @@
 			</c:if>
 		</div>
 		<div id="menubar"></div>
-		<div class="oskari-tile oskari-tile-closed digiroad"
+<!--		<div class="oskari-tile oskari-tile-closed digiroad"
 			style="display: block;">
 			<div class="oskari-tile-title">
 				<a href="https://aineistot.liikennevirasto.fi/digiroad/latest/"
 					target="_blank">DIGIROAD</a>
 			</div>
 			<div class="oskari-tile-status"></div>
-		</div>
+		</div> -->
 		<div id="divider"></div>
 		<div id="toolbar"></div>
 		<div id="login">
