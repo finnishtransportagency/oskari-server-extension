@@ -94,6 +94,14 @@
 		cursor: pointer;
 		text-decoration: underline;
 	}
+	#maptools div.oskari-tile.digiroad div.oskari-tile-title a {
+		color: white;
+		font-weight: bold;
+		font-size: 11px;
+		text-align: left;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
 }
 </style>
 
@@ -127,8 +135,7 @@
 			style="display: block;">
 			<div class="oskari-tile-title">
 				<a href="https://aineistot.liikennevirasto.fi/digiroad/latest/"
-					target="_blank"
-					style="color: white; font-weight: bold; font-size: 11px; text-align: left; text-transform: uppercase; text-decoration: none;">DIGIROAD</a>
+					target="_blank">DIGIROAD</a>
 			</div>
 			<div class="oskari-tile-status"></div>
 		</div>
