@@ -94,14 +94,14 @@
 		cursor: pointer;
 		text-decoration: underline;
 	}
-	#maptools div.oskari-tile.digiroad div.oskari-tile-title a {
+/*	#maptools div.oskari-tile.digiroad div.oskari-tile-title a {
 		color: white;
 		font-weight: bold;
 		font-size: 11px;
 		text-align: left;
 		text-transform: uppercase;
-		text-decoration: none;
-	}
+		text-decoration: none; 
+	} */
 }
 </style>
 
