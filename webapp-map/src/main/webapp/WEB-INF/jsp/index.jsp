@@ -45,6 +45,15 @@
                 z-index: 2;
             }
 
+			#maptools div.oskari-tile.digiroad div.oskari-tile-title a {
+				color:white;
+				font-weight: bold;
+				font-size: 11px;
+				text-align:left;
+				text-transform: uppercase;
+				text-decoration:none;
+			}
+
 			#livi-logo {
 				height:107px;
 				width:107px;
@@ -137,6 +146,14 @@
     </div>
     <div id="menubar">
     </div>
+
+	<div class="oskari-tile oskari-tile-closed digiroad" style="display: block;">
+		<div class="oskari-tile-title">
+			<a href="https://aineistot.liikennevirasto.fi/digiroad/latest/" target="_blank">DIGIROAD</a>
+		</div>
+		<div class="oskari-tile-status"></div>
+	</div>
+
     <div id="divider">
     </div>
     <div id="toolbar">
