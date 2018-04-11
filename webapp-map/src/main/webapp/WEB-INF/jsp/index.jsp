@@ -8,7 +8,7 @@
     <title>Liikennevirasto - latauspalvelu</title>
      <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js">
+    <script type="text/javascript" src="/Oskari/libraries/jquery/jquery-1.10.2.min.js">
     </script>
 
     <!-- ############# css ################# -->

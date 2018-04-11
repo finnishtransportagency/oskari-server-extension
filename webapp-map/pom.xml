@@ -33,6 +33,11 @@
 			<artifactId>oskari-control-admin</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>
+		
+		<dependency>
+  			<groupId>org.oskari</groupId>
+  			<artifactId>control-userlayer</artifactId>
+		</dependency>
 
 		<!-- Replace icu4j version included by axiom-api with newer version which 
 			does not brake .jar investigation performed by jetty-maven plugin -->
