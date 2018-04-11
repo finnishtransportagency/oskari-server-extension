@@ -37,6 +37,7 @@
 		<dependency>
   			<groupId>org.oskari</groupId>
   			<artifactId>control-userlayer</artifactId>
+  			<version>${oskari.version}</version>
 		</dependency>
 
 		<!-- Replace icu4j version included by axiom-api with newer version which 
