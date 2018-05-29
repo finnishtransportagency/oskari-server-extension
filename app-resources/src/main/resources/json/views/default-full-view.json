@@ -40,7 +40,6 @@
                     { "id" : "Oskari.mapframework.bundle.myplacesimport.plugin.UserLayersLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapmyplaces.plugin.MyPlacesLayerPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapanalysis.plugin.AnalysisLayerPlugin" },
-                    { "id" : "Oskari.mapframework.bundle.coordinatetool.plugin.CoordinateToolPlugin" },
                     { "id" : "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin",
        					"config" : {
           				"baseLayers": ["1", "2", "3"]
