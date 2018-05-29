@@ -23,9 +23,9 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceIbatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
     private static final String MAPFULL = "mapfull"; 
-    private static final String TAUSTAKARTTA_NAME = "Taustakarttasarja";
-    private static final String ORTOKUVA_NAME = "Ortokuva";
-    private static final String MERIKARTAT_NAME = "Merikarttasarjat";
+    private static final String TAUSTAKARTTA_NAME = "taustakartta";
+    private static final String ORTOKUVA_NAME = "ortokuva";
+    private static final String MERIKARTAT_NAME = "liikennevirasto:Merikarttasarjat";
     public void migrate(Connection connection)
             throws Exception {
         View view = VIEW_SERVICE.getViewWithConf(VIEW_SERVICE.getDefaultViewId());
