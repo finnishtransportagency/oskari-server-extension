@@ -8,7 +8,7 @@
     <title>Liikennevirasto - latauspalvelu</title>
      <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
 
-    <script type="text/javascript" src="/Oskari/libraries/jquery/jquery-1.10.2.min.js">
+    <script type="text/javascript" src="/Oskari/libraries/jquery/jquery-3.3.1.min.js">
     </script>
 
     <!-- ############# css ################# -->
@@ -24,7 +24,7 @@
             rel="stylesheet"
             type="text/css"
             href="/Oskari${path}/icons.css"/>
-    
+
     <style type="text/css">
         @media screen {
             body {
@@ -102,7 +102,7 @@
                 color: #FFF;
                 padding: 5px;
             }
-            
+
             #language {
                 padding: 0px 10px 0px 16px;
                 color: #CCC;
@@ -116,7 +116,7 @@
 
         }
     </style>
-    
+
     <link
             rel="stylesheet"
             type="text/css"
@@ -158,6 +158,7 @@
     </div>
     <div id="toolbar">
     </div>
+
     <div id="login">
         <c:choose>
             <c:when test="${!empty loginState}">
@@ -167,7 +168,12 @@
         <c:choose>
             <%-- If logout url is present - so logout link --%>
             <c:when test="${!empty _logout_uri}">
-                <a href="${pageContext.request.contextPath}${_logout_uri}"><spring:message code="logout" text="Logout" /></a>
+                <form action="${pageContext.request.contextPath}${_logout_uri}" method="POST" id="logoutform">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <a href="${pageContext.request.contextPath}${_logout_uri}" onClick="jQuery('#logoutform').submit();return false;"><spring:message code="logout" text="Logout" /></a>
+                </form>
+                <%-- oskari-profile-link id is used by the personaldata bundle - do not modify --%>
+                <a href="${pageContext.request.contextPath}${_registration_uri}" id="oskari-profile-link"><spring:message code="account" text="Account" /></a>
             </c:when>
             <%-- Otherwise show appropriate logins --%>
             <c:otherwise>
@@ -175,17 +181,23 @@
                     <a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message code="login.sso" text="SSO login" /></a><hr />
                 </c:if>
                 <c:if test="${!empty _login_uri && !empty _login_field_user}">
-                	<p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="Ylläpidon kirjautuminen" /></p>
+                    <p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="Ylläpidon kirjautuminen" /></p>
                     <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
-                               required>
-                        <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required>
-                        <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />">
+                               required />
+                        <input size="16" id="password" name="${_login_field_pass}" type="password" placeholder="<spring:message code="password" text="Password" />" required />
+
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <input type="submit" id="submit" value="<spring:message code="login" text="Log in" />" />
                     </form>
+                </c:if>
+                <c:if test="${!empty _registration_uri}">
+                    <a href="${pageContext.request.contextPath}${_registration_uri}"><spring:message code="user.registration" text="Register" /></a>
                 </c:if>
             </c:otherwise>
         </c:choose>
     </div>
+
 </nav>
 <div id="contentMap" class="oskariui container-fluid">
     <div id="menutoolbar" class="container-fluid"></div>
