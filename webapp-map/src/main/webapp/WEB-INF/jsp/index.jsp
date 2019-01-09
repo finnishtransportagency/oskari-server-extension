@@ -5,8 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Liikennevirasto - latauspalvelu</title>
-     <!--   <title>Liikennevirasto - Oskari - ${viewName}</title> -->
+    <title>Väylävirasto - latauspalvelu</title>
+     <!--   <title>Väylävirasto - Oskari - ${viewName}</title> -->
 
     </script>
 
@@ -19,7 +19,7 @@
 
     <style type="text/css">
         #livi-logo {
-		    background:url("/Oskari${path}/images/livilogo107.png") no-repeat;
+		    background:url("/Oskari${path}/images/VAYLAwhite107.png") no-repeat;
         }
     </style>
      <!-- ############# /css ################# -->
@@ -27,7 +27,7 @@
 <body>
 
 <nav id="maptools">
-    <div id="livi-logo" onclick="window.open('http://www.liikennevirasto.fi/');return false;">
+    <div id="livi-logo" onclick="window.open('http://www.vayla.fi/');return false;">
 	</div>
 	<div id="loginbar">
     </div>
@@ -50,7 +50,7 @@
 
 	<div class="oskari-tile oskari-tile-closed digiroad" style="display: block;">
 		<div class="oskari-tile-title">
-			<a href="https://aineistot.liikennevirasto.fi/digiroad/latest/" target="_blank">DIGIROAD</a>
+			<a href="https://aineistot.vayla.fi/digiroad/latest/" target="_blank">DIGIROAD</a>
 		</div>
 		<div class="oskari-tile-status"></div>
 	</div>
