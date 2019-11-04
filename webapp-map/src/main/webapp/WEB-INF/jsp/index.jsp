@@ -6,7 +6,7 @@
 <html>
 <head>
     <title>Väylävirasto - latauspalvelu</title>
-     <!--   <title>Väylävirasto - Oskari - ${viewName}</title> -->
+     <!--   <title>VÃ¤ylÃ¤virasto - Oskari - ${viewName}</title> -->
 
     </script>
 
@@ -101,7 +101,7 @@
     </div>
     <div id="language">
             <c:if test="${language == 'fi'}">
-                <a href="./?lang=sv">På svenska</a> -
+                <a href="./?lang=sv">PÃ¥ svenska</a> -
                 <a href="./?lang=en">In English</a>
             </c:if>
             <c:if test="${language == 'sv'}">
@@ -110,7 +110,7 @@
             </c:if>
             <c:if test="${language == 'en'}">
                 <a href="./?lang=fi">Suomeksi</a> -
-                <a href="./?lang=sv">På svenska</a>
+                <a href="./?lang=sv">PÃ¥ svenska</a>
             </c:if>
     </div>
     <div id="menubar">
