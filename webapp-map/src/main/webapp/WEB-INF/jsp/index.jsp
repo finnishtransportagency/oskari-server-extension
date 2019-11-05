@@ -6,9 +6,9 @@
 <html>
 <head>
     <title>Väylävirasto - latauspalvelu</title>
-     <!--   <title>VÃ¤ylÃ¤virasto - Oskari - ${viewName}</title> -->
+     <!--   <title>Väylävirasto - Oskari - ${viewName}</title> -->
 
-    </script>
+    <script></script>
 
     <!-- ############# css ################# -->
 
@@ -101,7 +101,7 @@
     </div>
     <div id="language">
             <c:if test="${language == 'fi'}">
-                <a href="./?lang=sv">PÃ¥ svenska</a> -
+                <a href="./?lang=sv">På svenska</a> -
                 <a href="./?lang=en">In English</a>
             </c:if>
             <c:if test="${language == 'sv'}">
@@ -110,7 +110,7 @@
             </c:if>
             <c:if test="${language == 'en'}">
                 <a href="./?lang=fi">Suomeksi</a> -
-                <a href="./?lang=sv">PÃ¥ svenska</a>
+                <a href="./?lang=sv">På svenska</a>
             </c:if>
     </div>
     <div id="menubar">
@@ -150,7 +150,7 @@
                     <a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message code="login.sso" text="SSO login" /></a><hr />
                 </c:if>
                 <c:if test="${!empty _login_uri && !empty _login_field_user}">
-                    <p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="Ylläpidon kirjautuminen" /></p>
+                    <p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="YllÃ¤pidon kirjautuminen" /></p>
                     <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required />
