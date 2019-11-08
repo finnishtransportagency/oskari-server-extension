@@ -8,7 +8,7 @@
     <title>Väylävirasto - latauspalvelu</title>
      <!--   <title>Väylävirasto - Oskari - ${viewName}</title> -->
 
-    </script>
+    <script></script>
 
     <!-- ############# css ################# -->
 
@@ -18,8 +18,76 @@
             href="/Oskari${path}/icons.css"/>
 
     <style type="text/css">
-        #livi-logo {
-		    background:url("/Oskari${path}/images/VAYLAwhite107.png") no-repeat;
+
+        @media screen {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            
+            #livi-logo {
+                background:url("/Oskari${path}/images/VAYLAwhite107.png") no-repeat;
+            }
+
+            #mapdiv {
+                width: 100%;
+            }
+
+            #maptools {
+                background-color: #0064af!important;
+                height: 100%;
+                position: fixed!important;
+                top: 0;
+                width: 153px;
+                z-index: 2;
+            }
+
+            #contentMap {
+                height: 100%;
+                margin-left: 170px;
+            }
+
+            #login {
+                margin-left: 5px;
+                padding-top: 25px;
+            }
+
+            #login input[type="text"], #login input[type="password"] {
+                width: 90%;
+                margin-bottom: 5px;
+                background-image: url("/Oskari${path}/images/forms/input_shadow.png");
+                background-repeat: no-repeat;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 1px solid #B7B7B7;
+                border-radius: 4px 4px 4px 4px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+                color: rgb(0, 0, 0) !important;;
+                font: 13px/100% Arial, sans-serif;
+            }
+
+            #login input[type="submit"] {
+                width: 90%;
+                margin-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 1px solid #B7B7B7;
+                border-radius: 4px 4px 4px 4px;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+                color: #878787;
+                font: 13px/100% Arial, sans-serif;
+            }
+
+            #login p.error {
+                font-weight: bold;
+                color: red;
+                margin-bottom: 10px;
+            }
+
+            #login a {
+                color: #FFF;
+                padding: 5px;
+            }
         }
     </style>
      <!-- ############# /css ################# -->
@@ -82,7 +150,7 @@
                     <a href="${pageContext.request.contextPath}${_login_uri_saml}"><spring:message code="login.sso" text="SSO login" /></a><hr />
                 </c:if>
                 <c:if test="${!empty _login_uri && !empty _login_field_user}">
-                    <p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="Ylläpidon kirjautuminen" /></p>
+                    <p style="color: #FFFFFF;padding-bottom: 5px;"><spring:message code="admin_login" text="YllÃ¤pidon kirjautuminen" /></p>
                     <form action='${pageContext.request.contextPath}${_login_uri}' method="post" accept-charset="UTF-8">
                         <input size="16" id="username" name="${_login_field_user}" type="text" placeholder="<spring:message code="username" text="Username" />" autofocus
                                required />
