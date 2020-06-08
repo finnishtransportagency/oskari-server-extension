@@ -10,7 +10,7 @@
     <name>Finnish Transport Agency applications</name>
 
     <properties>
-        <oskari.version>1.53.1</oskari.version>
+        <oskari.version>1.55.1</oskari.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -27,12 +27,12 @@
         <repository>
             <id>oskari_org</id>
             <name>Oskari.org release repository</name>
-            <url>http://oskari.org/nexus/content/repositories/releases/</url>
+            <url>https://oskari.org/nexus/content/repositories/releases/</url>
         </repository>
         <repository>
             <id>oskari_org_snapshot</id>
             <name>Oskari.org snapshot repository</name>
-            <url>http://oskari.org/nexus/content/repositories/snapshots/</url>
+            <url>https://oskari.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -74,7 +74,6 @@
         <module>app-resources</module>
         <module>server-extension</module>
         <module>webapp-map</module>
-        <module>webapp-transport</module>
     </modules>
 
 </project>
