@@ -1,10 +1,10 @@
-package fi.nls.oskari.announcements.service;
+package vaylavirasto.announcements.service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import com.ibatis.sqlmap.client.SqlMapSession;
-import fi.nls.oskari.domain.announcements.Announcement;
+import vaylavirasto.announcements.Announcement;
 import fi.nls.oskari.service.ServiceException;
 import fi.nls.oskari.service.db.BaseIbatisService;
 
@@ -17,7 +17,7 @@ public class AnnouncementsDbServiceIbatisImpl extends
 	}
 
 	@Override
-	public List<Announcement> getAnnouncements(Date expirationDate)
+	public List<Announcement> getAnnouncements(Date beginDate, Date endDate)
 			throws ServiceException {
 
 		try {
@@ -26,7 +26,7 @@ public class AnnouncementsDbServiceIbatisImpl extends
 
 			List<Announcement> announcementsToReturn = new ArrayList<Announcement>();
 			for (Announcement a : announcements) {
-				if (expirationDate.before(a.getExpirationDate())) {
+				if (beginDate.after(a.getBeginDate()) && endDate.before(a.getEndDate())) {
 					announcementsToReturn.add(a);
 				}
 			}

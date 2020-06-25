@@ -1,19 +1,16 @@
-package fi.nls.oskari.control.announcements;
+package vaylavirasto.announcements;
 
 import fi.nls.oskari.annotation.OskariActionRoute;
-import fi.nls.oskari.announcements.service.AnnouncementsDbService;
-import fi.nls.oskari.announcements.service.AnnouncementsDbServiceIbatisImpl;
+import vaylavirasto.announcements.service.AnnouncementsDbService;
+import vaylavirasto.announcements.service.AnnouncementsDbServiceIbatisImpl;
 import fi.nls.oskari.control.ActionException;
 import fi.nls.oskari.control.ActionHandler;
 import fi.nls.oskari.control.ActionParameters;
-import fi.nls.oskari.control.workspaces.DeleteWorkSpaceHandler;
 import fi.nls.oskari.domain.User;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.service.ServiceException;
 import fi.nls.oskari.util.ResponseHelper;
-import fi.nls.oskari.workspaces.service.WorkSpaceDbService;
-import fi.nls.oskari.workspaces.service.WorkSpaceServiceIbatisImpl;
 
 @OskariActionRoute("DeleteAnnouncement")
 public class DeleteAnnouncementHandler extends ActionHandler{

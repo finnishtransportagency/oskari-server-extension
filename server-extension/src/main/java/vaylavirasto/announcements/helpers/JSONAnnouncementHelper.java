@@ -1,4 +1,4 @@
-package fi.nls.oskari.control.announcements;
+package vaylavirasto.announcements.helpers;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import fi.nls.oskari.domain.announcements.Announcement;
+import vaylavirasto.announcements.Announcement;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.util.JSONHelper;
@@ -24,9 +24,12 @@ public class JSONAnnouncementHelper {
 			JSONObject ob = new JSONObject();
 			JSONHelper.putValue(ob, "id", a.getId());
 			JSONHelper.putValue(ob, "title", a.getTitle());
-			JSONHelper.putValue(ob, "message", a.getMessage());
-			JSONHelper.putValue(ob, "expirationDate", new SimpleDateFormat(
-					"yyyy-MM-dd").format(a.getExpirationDate()));
+			JSONHelper.putValue(ob, "content", a.getContent());
+			JSONHelper.putValue(ob, "beginDate", new SimpleDateFormat(
+					"yyyy-MM-dd").format(a.getBeginDate()));
+			JSONHelper.putValue(ob, "endDate", new SimpleDateFormat(
+				"yyyy-MM-dd").format(a.getEndDate()));
+			JSONHelper.putValue(ob, "active", a.getActive());
 
 			outputArray.put(ob);
 		}
