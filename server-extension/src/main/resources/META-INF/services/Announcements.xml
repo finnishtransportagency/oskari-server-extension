@@ -19,7 +19,7 @@
 			ORDER BY id DESC;
 	</select>
 	
-	<statement id="insertAnnouncement" resultClass="java.lang.Long" parameterClass="Announcement">
+	<statement id="insertAnnouncement" resultClass="java.lang.Long" parameterClass="Announcements">
 		INSERT INTO oskari_announcements(
             title, content, begin_date, end_date, active)
     		VALUES (#title#, #content#, #begin_date#, #end_date#, #active#)

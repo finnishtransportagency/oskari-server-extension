@@ -43,7 +43,7 @@ public class SaveAnnouncementHandler extends ActionHandler{
 		Long insertId = null;
 		JSONObject response = new JSONObject();
 		
-		if (!user.isGuest()) {
+		if (user.isGuest()) {
 			
 			String idParam = params.getHttpParam(ANNOUNCEMENT_ID);
 			String titleParam = params.getHttpParam(ANNOUNCEMENT_TITLE);
