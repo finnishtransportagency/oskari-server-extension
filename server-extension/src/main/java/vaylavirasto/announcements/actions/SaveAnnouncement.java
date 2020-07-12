@@ -12,11 +12,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 @OskariActionRoute("SaveAnnouncement")
-public class SaveAnnouncement extends RestActionHandler{
+public class SaveAnnouncement extends AnnouncementsRestActionHandler{
     private static Logger LOG = LogFactory.getLogger(SaveAnnouncement.class);
 
     @Override
     public void handlePost(ActionParameters params) throws ActionException {
+        requireLiviConfigured();
 
         try {
             JSONObject result = AnnouncementsDBHelper.saveAnnouncement(params);

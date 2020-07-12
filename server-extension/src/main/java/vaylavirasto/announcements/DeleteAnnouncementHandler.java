@@ -1,4 +1,4 @@
-package vaylavirasto.announcements;
+/*package vaylavirasto.announcements;
 
 import fi.nls.oskari.annotation.OskariActionRoute;
 import vaylavirasto.announcements.service.AnnouncementsDbService;
@@ -47,4 +47,4 @@ public class DeleteAnnouncementHandler extends ActionHandler{
 		}
 	}
 
-}
+}*/

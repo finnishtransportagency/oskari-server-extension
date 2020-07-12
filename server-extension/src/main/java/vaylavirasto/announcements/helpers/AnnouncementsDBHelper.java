@@ -12,9 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.time.*;
 
@@ -58,9 +55,9 @@ public class AnnouncementsDBHelper {
         try  {
             conn = getConnection();
             StringBuilder sb = new StringBuilder();
-            sb.append("SELECT id, title, content, begin_date, end_date, active");
-            sb.append("FROM oskari_announcements");
-            sb.append("WHERE begin_date =< ? ::DATE AND end_date >= ? ::DATE");
+            sb.append("SELECT id, title, content, begin_date, end_date, active ");
+            sb.append("FROM oskari_announcements ");
+            sb.append("WHERE begin_date <= ? ::DATE AND end_date >= ? ::DATE ");
             sb.append("ORDER BY id DESC;");
 
             sql = sb.toString();
@@ -74,13 +71,13 @@ public class AnnouncementsDBHelper {
             sqlWithParams = pstmt.toString();
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                JSONArray row = new JSONArray();
-                row.put(rs.getInt("id"));
-                row.put(rs.getString("title"));
-                row.put(rs.getString("content"));
-                row.put(rs.getDate("begin_date"));
-                row.put(rs.getDate("end_date"));
-                row.put(rs.getBoolean("active"));
+                JSONObject row = new JSONObject();
+                row.put("id", rs.getInt("id"));
+                row.put("title", rs.getString("title"));
+                row.put("content", rs.getString("content"));
+                row.put("begin_date",rs.getDate("begin_date"));
+                row.put("end_date", rs.getDate("end_date"));
+                row.put("active", rs.getBoolean("active"));
                 results.put(row);
             }
 
@@ -96,6 +93,7 @@ public class AnnouncementsDBHelper {
                 }
             }
         }
+
         JSONObject json = new JSONObject();
         json.put("data", results);
 
@@ -121,8 +119,8 @@ public class AnnouncementsDBHelper {
         
             conn = getConnection();
             StringBuilder sb = new StringBuilder();
-            sb.append("INSERT INTO oskari_announcements(title, content, begin_date, end_date, active)");
-            sb.append("VALUES (?,?,?,?,?)");
+            sb.append("INSERT INTO oskari_announcements(title, content, begin_date, end_date, active) ");
+            sb.append("VALUES (? ::VARCHAR,? ::VARCHAR,? ::DATE,? ::DATE,? ::BOOLEAN) ");
             sb.append("RETURNING id;");
 
             
@@ -150,11 +148,11 @@ public class AnnouncementsDBHelper {
                 }
             }
 
+            System.out.println(pstmt);
+
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                JSONArray row = new JSONArray();
-                row.put(rs.getInt("id"));
-                results.put(row);
+                results.put(rs.getInt("id"));
             }
 
             /*
@@ -202,8 +200,9 @@ public class AnnouncementsDBHelper {
         try  {
             conn = getConnection();
             StringBuilder sb = new StringBuilder();
-            sb.append("DELETE FROM oskari_announcements");
-            sb.append(" WHERE id = ? ;");
+            sb.append("DELETE FROM oskari_announcements ");
+            sb.append("WHERE id = ? ");
+            sb.append("RETURNING id;");
             sql = sb.toString();
 
             List<AnnouncementParams> announcementParams = AnnouncementsParser.parseAnnouncement(params);
@@ -221,9 +220,7 @@ public class AnnouncementsDBHelper {
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                JSONArray row = new JSONArray();
-                row.put(rs.getInt("id"));
-                results.put(row);
+                results.put(rs.getInt("id"));
             }
 
         } catch (SQLException e) {

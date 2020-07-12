@@ -28,43 +28,43 @@ public class AnnouncementsParser {
      * @throws ActionParamsException
      */
     public static List<AnnouncementParams> parseAnnouncement (ActionParameters params) throws JSONException, ActionParamsException {
+        System.out.println("==========================");
+        System.out.println("==========================");
+        System.out.println(params);
+        System.out.println(params.getHttpParamAsJSON("params"));
+        System.out.println("==========================");
+        System.out.println("==========================");
         JSONObject jsonParams =  params.getHttpParamAsJSON("params");
 
         List<AnnouncementParams> AnnouncementParams = new ArrayList<>();
 
         if (jsonParams.has(KEY_ID)) {
             AnnouncementParams id = new AnnouncementParams(KEY_ID, null, jsonParams.getInt(KEY_ID));
-            id.setNeedCastVarchar(true);
             AnnouncementParams.add(id);
         }
 
         if (jsonParams.has(KEY_TITLE)) {
             AnnouncementParams title = new AnnouncementParams(KEY_TITLE, null, jsonParams.getString(KEY_TITLE));
-            title.setNeedCastVarchar(true);
             AnnouncementParams.add(title);
         }
 
         if (jsonParams.has(KEY_CONTENT)) {
             AnnouncementParams content = new AnnouncementParams(KEY_CONTENT, null, jsonParams.getString(KEY_CONTENT));
-            content.setNeedCastVarchar(true);
             AnnouncementParams.add(content);
         }
         
         if (jsonParams.has(KEY_BEGIN_DATE)) {
             AnnouncementParams beginDate = new AnnouncementParams(KEY_BEGIN_DATE, null, jsonParams.getString(KEY_BEGIN_DATE));
-            beginDate.setNeedCastVarchar(true);
             AnnouncementParams.add(beginDate);
         }
         
         if (jsonParams.has(KEY_END_DATE)) {
             AnnouncementParams endDate = new AnnouncementParams(KEY_END_DATE, null, jsonParams.getString(KEY_END_DATE));
-            endDate.setNeedCastVarchar(true);
             AnnouncementParams.add(endDate);
         }
 
         if (jsonParams.has(KEY_ACTIVE)) {
             AnnouncementParams active = new AnnouncementParams(KEY_ACTIVE, null, jsonParams.getString(KEY_ACTIVE));
-            active.setNeedCastVarchar(true);
             AnnouncementParams.add(active);
         }
 

@@ -1,4 +1,4 @@
-package vaylavirasto.announcements;
+/*package vaylavirasto.announcements;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -62,3 +62,4 @@ public class GetAnnouncementsHandler extends ActionHandler {
 	}
 
 }
+*/
