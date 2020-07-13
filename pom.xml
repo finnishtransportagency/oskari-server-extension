@@ -71,7 +71,6 @@
     </build>
 
     <modules>
-        <module>app-resources</module>
         <module>server-extension</module>
         <module>webapp-map</module>
     </modules>
