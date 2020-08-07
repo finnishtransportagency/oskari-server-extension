@@ -120,7 +120,7 @@ public class AnnouncementsDBHelper {
             conn = getConnection();
             StringBuilder sb = new StringBuilder();
             sb.append("INSERT INTO oskari_announcements(title, content, begin_date, end_date, active) ");
-            sb.append("VALUES (? ::VARCHAR,? ::VARCHAR,? ::DATE,? ::DATE,? ::BOOLEAN) ");
+            sb.append("VALUES (? ::VARCHAR, ? ::VARCHAR, ? ::DATE, ? ::DATE, ? ::BOOLEAN) ");
             sb.append("RETURNING id;");
 
             
@@ -136,6 +136,88 @@ public class AnnouncementsDBHelper {
                 if (announcementParam.getValue() instanceof Integer) {
                     pstmt.setInt(index, (int)announcementParam.getValue());
                     index++;
+                } else if (announcementParam.getValue() instanceof String) {
+                    pstmt.setString(index, (String)announcementParam.getValue());
+                    index++;
+                } else if (announcementParam.getValue() instanceof Date) {
+                    pstmt.setDate(index, (Date)announcementParam.getValue());
+                    index++;
+                } else if (announcementParam.getValue() instanceof Boolean) {
+                    pstmt.setBoolean(index, (Boolean)announcementParam.getValue());
+                    index++;
+                }
+            }
+
+            System.out.println(pstmt);
+
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                results.put(rs.getInt("id"));
+            }
+
+            /*
+            pstmt.setString(1, x);
+            pstmt.setString(2, x);
+            pstmt.setDate(3, x);
+            pstmt.setDate(4, x);
+            pstmt.setBoolean(5, x);
+            */
+
+        } catch (SQLException e) {
+            LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
+
+        } finally {
+            if(conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    LOG.error(e);
+                }
+            }
+        }
+
+        JSONObject json = new JSONObject();
+        json.put("data", results);
+
+        return json;
+
+    }
+
+    /**
+     * Handle saving announcement to database
+     * @param params
+     * @return
+     * @throws JSONException
+     * @throws ActionParamsException
+     */
+    public static JSONObject updateAnnouncement(ActionParameters params) throws JSONException, ActionParamsException {
+        Connection conn = null;
+
+        JSONArray results = new JSONArray();
+        String sql = "";
+        String sqlWithParams = "";
+
+        try  {
+        
+            conn = getConnection();
+            StringBuilder sb = new StringBuilder();
+            sb.append("UPDATE oskari_announcements ");
+            sb.append("SET title = ? :: VARCHAR, content = ? :: VARCHAR, begin_date = ? :: DATE, end_date = ? :: DATE, active = ? :: BOOLEAN ");
+            sb.append("WHERE id = ? ::INTEGER ");
+            sb.append("RETURNING id;");
+
+            
+
+            sql = sb.toString();
+            List<AnnouncementParams> announcementParams = AnnouncementsParser.parseAnnouncement(params);
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            int index = 1;
+            for (int i=0; i<announcementParams.size(); i++) {
+                AnnouncementParams announcementParam = announcementParams.get(i);
+                if (announcementParam.getValue() instanceof Integer) {
+                    pstmt.setInt(6, (int)announcementParam.getValue());
                 } else if (announcementParam.getValue() instanceof String) {
                     pstmt.setString(index, (String)announcementParam.getValue());
                     index++;
