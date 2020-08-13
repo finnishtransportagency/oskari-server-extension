@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.sql.*;
 import java.util.List;
+import java.text.SimpleDateFormat;
 import java.time.*;
 
 /**
@@ -70,13 +71,14 @@ public class AnnouncementsDBHelper {
 
             sqlWithParams = pstmt.toString();
             ResultSet rs = pstmt.executeQuery();
+            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
             while (rs.next()) {
                 JSONObject row = new JSONObject();
                 row.put("id", rs.getInt("id"));
                 row.put("title", rs.getString("title"));
                 row.put("content", rs.getString("content"));
-                row.put("begin_date",rs.getDate("begin_date"));
-                row.put("end_date", rs.getDate("end_date"));
+                row.put("begin_date", df.format(rs.getDate("begin_date")));
+                row.put("end_date", df.format(rs.getDate("end_date")));
                 row.put("active", rs.getBoolean("active"));
                 results.put(row);
             }
