@@ -19,11 +19,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>fi.livi.oskari</groupId>
-			<artifactId>app-resources</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>fi.livi.oskari</groupId>
 			<artifactId>server-extension</artifactId>
 			<version>${project.version}</version>
 		</dependency>
