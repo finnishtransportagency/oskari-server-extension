@@ -11,7 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 @OskariActionRoute("GetAdminAnnouncements")
-public class GetAnnouncements extends AnnouncementsRestActionHandler{
+public class GetAdminAnnouncements extends AnnouncementsRestActionHandler{
     private static Logger LOG = LogFactory.getLogger(GetAnnouncements.class);
 
     @Override
