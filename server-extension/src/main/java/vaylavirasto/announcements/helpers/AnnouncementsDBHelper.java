@@ -71,7 +71,7 @@ public class AnnouncementsDBHelper {
 
             sqlWithParams = pstmt.toString();
             ResultSet rs = pstmt.executeQuery();
-            SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-DD");
             while (rs.next()) {
                 JSONObject row = new JSONObject();
                 row.put("id", rs.getInt("id"));
@@ -82,6 +82,68 @@ public class AnnouncementsDBHelper {
                 row.put("active", rs.getBoolean("active"));
                 results.put(row);
             }
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(pstmt);
+
+        } catch (SQLException e) {
+            LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
+
+        } finally {
+            if(conn != null) {
+                try {
+                    conn.close();
+                } catch (Exception e) {
+                    LOG.error(e);
+                }
+            }
+        }
+
+        JSONObject json = new JSONObject();
+        json.put("data", results);
+
+        return json;
+
+    }
+
+    /**
+     * Handle getting admin-announcements from database
+     * @param params
+     * @return
+     * @throws JSONException
+     * @throws ActionParamsException
+     */
+    public static JSONObject getAdminAnnouncements() throws JSONException, ActionParamsException {
+        Connection conn = null;
+
+        JSONArray results = new JSONArray();
+        String sql = "";
+        String sqlWithParams = "";
+
+        try  {
+            conn = getConnection();
+            StringBuilder sb = new StringBuilder();
+            sb.append("SELECT id, title, content, begin_date, end_date, active ");
+            sb.append("FROM oskari_announcements ");
+            sb.append("ORDER BY id DESC;");
+
+            sql = sb.toString();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            sqlWithParams = pstmt.toString();
+            ResultSet rs = pstmt.executeQuery();
+            SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-DD");
+            while (rs.next()) {
+                JSONObject row = new JSONObject();
+                row.put("id", rs.getInt("id"));
+                row.put("title", rs.getString("title"));
+                row.put("content", rs.getString("content"));
+                row.put("begin_date", df.format(rs.getDate("begin_date")));
+                row.put("end_date", df.format(rs.getDate("end_date")));
+                row.put("active", rs.getBoolean("active"));
+                results.put(row);
+            }
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(pstmt);
 
         } catch (SQLException e) {
             LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
@@ -149,7 +211,7 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
-
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
@@ -231,7 +293,7 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
-
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
@@ -301,6 +363,9 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
+            
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {

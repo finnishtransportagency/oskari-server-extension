@@ -28,12 +28,7 @@ public class AnnouncementsParser {
      * @throws ActionParamsException
      */
     public static List<AnnouncementParams> parseAnnouncement (ActionParameters params) throws JSONException, ActionParamsException {
-        System.out.println("==========================");
-        System.out.println("==========================");
-        System.out.println(params);
-        System.out.println(params.getHttpParamAsJSON("params"));
-        System.out.println("==========================");
-        System.out.println("==========================");
+        
         JSONObject jsonParams =  params.getHttpParamAsJSON("params");
 
         List<AnnouncementParams> AnnouncementParams = new ArrayList<>();
@@ -71,38 +66,4 @@ public class AnnouncementsParser {
         return AnnouncementParams;
 
     }
-
-    /**
-     * Genereates search where clause
-     * @param searchParams
-     * @return
-     */
-
-     /*
-    public static String getSearchWhere(final List<AnnouncementParams> searchParams){
-        StringBuilder sb = new StringBuilder();
-        if(searchParams.size() == 0) {
-            return sb.toString();
-        }
-
-        sb.append("WHERE ");
-        for (AnnouncementParams searchParam : searchParams) {
-            if (searchParam.getValue() instanceof Integer) {
-                sb.append(searchParam.getId() + "=? AND ");
-            } else if (searchParam.getValue() instanceof Long) {
-                sb.append(searchParam.getId() + "=? AND ");
-            } else if (searchParam.getValue() instanceof String) {
-                if(searchParam.isNeedCastVarchar()) {
-                    sb.append(searchParam.getId() + "::VARCHAR =? AND ");
-                } else {
-                    sb.append(searchParam.getId() + "=? AND ");
-                }
-            }
-        }
-        String where = sb.toString();
-        where = where.substring(0, where.length()-4);
-
-        return where;
-    }
-    */
 }

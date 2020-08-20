@@ -10,7 +10,7 @@ import vaylavirasto.announcements.helpers.AnnouncementsDBHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-@OskariActionRoute("GetAnnouncements")
+@OskariActionRoute("GetAdminAnnouncements")
 public class GetAnnouncements extends AnnouncementsRestActionHandler{
     private static Logger LOG = LogFactory.getLogger(GetAnnouncements.class);
 
@@ -19,14 +19,14 @@ public class GetAnnouncements extends AnnouncementsRestActionHandler{
         requireLiviConfigured();
 
         try {
-            JSONObject result = AnnouncementsDBHelper.getAnnouncements();
+            JSONObject result = AnnouncementsDBHelper.getAdminAnnouncements();
             
             System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             System.out.println(result);
             ResponseHelper.writeResponse(params, 200, result);
         } catch (JSONException e) {
-            LOG.error("Error for fetching announcements", e);
-            throw new ActionException("Cannot get announcements");
+            LOG.error("Error for fetching admin-announcements", e);
+            throw new ActionException("Cannot get admin-announcements");
         }
     }
 }

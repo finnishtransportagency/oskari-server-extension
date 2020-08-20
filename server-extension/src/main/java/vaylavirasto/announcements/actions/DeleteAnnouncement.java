@@ -23,6 +23,8 @@ public class DeleteAnnouncement extends AnnouncementsRestActionHandler {
         System.out.println("==============DELETEANN============");
         System.out.println("==========================");
             JSONObject result = AnnouncementsDBHelper.deleteAnnouncement(params);
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(result);
             ResponseHelper.writeResponse(params, result);
         } catch (JSONException e) {
             LOG.error("Error with deleting announcement", e);
