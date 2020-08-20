@@ -21,8 +21,6 @@ public class SaveAnnouncement extends AnnouncementsRestActionHandler{
 
         try {
             JSONObject result = AnnouncementsDBHelper.saveAnnouncement(params);
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(result);
             ResponseHelper.writeResponse(params, result);
         } catch (JSONException e) {
             LOG.error("Error saving announcement", e);

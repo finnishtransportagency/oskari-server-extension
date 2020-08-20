@@ -21,8 +21,6 @@ public class GetAnnouncements extends AnnouncementsRestActionHandler{
         try {
             JSONObject result = AnnouncementsDBHelper.getAdminAnnouncements();
             
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(result);
             ResponseHelper.writeResponse(params, 200, result);
         } catch (JSONException e) {
             LOG.error("Error for fetching admin-announcements", e);

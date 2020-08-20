@@ -82,8 +82,6 @@ public class AnnouncementsDBHelper {
                 row.put("active", rs.getBoolean("active"));
                 results.put(row);
             }
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(pstmt);
 
         } catch (SQLException e) {
             LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
@@ -142,8 +140,6 @@ public class AnnouncementsDBHelper {
                 row.put("active", rs.getBoolean("active"));
                 results.put(row);
             }
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(pstmt);
 
         } catch (SQLException e) {
             LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
@@ -211,8 +207,6 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -293,8 +287,6 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -363,9 +355,6 @@ public class AnnouncementsDBHelper {
                     index++;
                 }
             }
-            
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(pstmt);
 
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
