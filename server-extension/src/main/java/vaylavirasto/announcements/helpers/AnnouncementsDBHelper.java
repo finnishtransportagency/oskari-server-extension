@@ -71,7 +71,7 @@ public class AnnouncementsDBHelper {
 
             sqlWithParams = pstmt.toString();
             ResultSet rs = pstmt.executeQuery();
-            SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-DD");
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             while (rs.next()) {
                 JSONObject row = new JSONObject();
                 row.put("id", rs.getInt("id"));
@@ -129,7 +129,7 @@ public class AnnouncementsDBHelper {
 
             sqlWithParams = pstmt.toString();
             ResultSet rs = pstmt.executeQuery();
-            SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-DD");
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             while (rs.next()) {
                 JSONObject row = new JSONObject();
                 row.put("id", rs.getInt("id"));
