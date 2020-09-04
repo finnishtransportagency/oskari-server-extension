@@ -122,6 +122,12 @@
 		</div>
 		<div class="oskari-tile-status"></div>
 	</div>
+	<div class="oskari-tile oskari-tile-closed ava" style="display: block;">
+		<div class="oskari-tile-title">
+			<a href="https://aineistot.vayla.fi/" target="_blank">AVOIMET AINEISTOT</a>
+		</div>
+		<div class="oskari-tile-status"></div>
+	</div>	
 
     <div id="divider">
     </div>
