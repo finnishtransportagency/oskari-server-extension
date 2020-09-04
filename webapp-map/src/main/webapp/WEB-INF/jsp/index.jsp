@@ -122,6 +122,20 @@
 		</div>
 		<div class="oskari-tile-status"></div>
 	</div>
+	<div class="oskari-tile oskari-tile-closed digiroad" style="display: block;">
+		<div class="oskari-tile-title">
+		    <c:if test="${language == 'fi'}">
+				<a href="https://aineistot.vayla.fi/" target="_blank">AVOIMET AINEISTOT</a>
+            </c:if>
+            <c:if test="${language == 'sv'}">
+				<a href="https://aineistot.vayla.fi/" target="_blank">ÖPPNA DATA</a>
+            </c:if>
+            <c:if test="${language == 'en'}">
+				<a href="https://aineistot.vayla.fi/" target="_blank">OPEN DATA</a>
+            </c:if>
+		</div>
+		<div class="oskari-tile-status"></div>
+	</div>	
 
     <div id="divider">
     </div>
