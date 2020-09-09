@@ -26,7 +26,7 @@
             }
             
             #livi-logo {
-                background:url("/Oskari${path}/images/VAYLAwhite107.png") no-repeat;
+                background:url("/Oskari${path}/images/vayla_alla_fi_sv_white.png") no-repeat;
             }
 
             #mapdiv {
