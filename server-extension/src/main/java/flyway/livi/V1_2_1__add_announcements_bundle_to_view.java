@@ -1,27 +1,29 @@
-package flyway.livi;
+package flyway.announcements;
 
 import fi.nls.oskari.domain.map.view.View;
 import fi.nls.oskari.map.view.ViewService;
 import fi.nls.oskari.map.view.AppSetupServiceMybatisImpl;
-import fi.nls.oskari.util.FlywayHelper;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.oskari.helpers.AppSetupHelper;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
 import java.sql.Connection;
 import java.util.List;
 
-public class V1_2_1__add_announcements_bundle_to_view implements JdbcMigration {
+public class V1_2_1__add_announcements_bundle_to_view extends BaseJavaMigration {
 	
 	private static final ViewService VIEW_SERVICE = new AppSetupServiceMybatisImpl();
     private static final  String BUNDLE_ID = "announcements";
 
-    public void migrate(Connection connection) throws Exception {
+    public void migrate(Context context) throws Exception {
+        Connection connection = context.getConnection();
         List<View> views = VIEW_SERVICE.getViewsForUser(-1);
         for (View v : views) {
             if (v.isDefault()) {
-                if (FlywayHelper.viewContainsBundle(connection, BUNDLE_ID, v.getId())) {
+                if (AppSetupHelper.appContainsBundle(connection, v.getId(), BUNDLE_ID)) {
                     continue;
                 }
-                FlywayHelper.addBundleWithDefaults(connection, v.getId(), BUNDLE_ID);
+                AppSetupHelper.addBundleToApp(connection, v.getId(), BUNDLE_ID);
             }
         }
     }

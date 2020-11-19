@@ -1,4 +1,4 @@
-package vaylavirasto.announcements.helpers;
+/*package vaylavirasto.announcements.helpers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -119,3 +119,4 @@ public class SaveAnnouncementHandler extends ActionHandler{
 	}
 
 }
+*/

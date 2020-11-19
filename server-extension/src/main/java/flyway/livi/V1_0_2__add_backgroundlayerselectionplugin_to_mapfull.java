@@ -7,7 +7,8 @@ import fi.nls.oskari.map.layer.OskariLayerService;
 import fi.nls.oskari.map.layer.OskariLayerServiceMybatisImpl;
 import fi.nls.oskari.map.view.ViewService;
 import fi.nls.oskari.map.view.AppSetupServiceMybatisImpl;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * Created by Marko Kuosmanen on 23.9.2015. Edited by Olli Jakobsson on 28.6.2017
  */
-public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements JdbcMigration {
+public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull extends BaseJavaMigration {
     private static final ViewService VIEW_SERVICE = new AppSetupServiceMybatisImpl();
     private static final OskariLayerService LAYER_SERVICE = new OskariLayerServiceMybatisImpl();
     private static final String PLUGIN_NAME = "Oskari.mapframework.bundle.mapmodule.plugin.BackgroundLayerSelectionPlugin";
@@ -26,8 +27,10 @@ public class V1_0_2__add_backgroundlayerselectionplugin_to_mapfull implements Jd
     private static final String TAUSTAKARTTA_NAME = "taustakartta";
     private static final String ORTOKUVA_NAME = "ortokuva";
     private static final String MERIKARTAT_NAME = "liikennevirasto:Merikarttasarjat public";
-    public void migrate(Connection connection)
-            throws Exception {
+
+    public void migrate(Context context) throws Exception {
+        Connection connection = context.getConnection();
+        
         View view = VIEW_SERVICE.getViewWithConf(VIEW_SERVICE.getDefaultViewId());
         final Bundle mapfull = view.getBundleByName(MAPFULL);
         boolean addedPlugin = addPlugin(mapfull);

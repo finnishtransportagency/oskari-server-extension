@@ -213,14 +213,6 @@ public class AnnouncementsDBHelper {
                 results.put(rs.getInt("id"));
             }
 
-            /*
-            pstmt.setString(1, x);
-            pstmt.setString(2, x);
-            pstmt.setDate(3, x);
-            pstmt.setDate(4, x);
-            pstmt.setBoolean(5, x);
-            */
-
         } catch (SQLException e) {
             LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);
 
@@ -292,14 +284,6 @@ public class AnnouncementsDBHelper {
             while (rs.next()) {
                 results.put(rs.getInt("id"));
             }
-
-            /*
-            pstmt.setString(1, x);
-            pstmt.setString(2, x);
-            pstmt.setDate(3, x);
-            pstmt.setDate(4, x);
-            pstmt.setBoolean(5, x);
-            */
 
         } catch (SQLException e) {
             LOG.error(e, "Cannot create SQL query, sql=" + sqlWithParams);

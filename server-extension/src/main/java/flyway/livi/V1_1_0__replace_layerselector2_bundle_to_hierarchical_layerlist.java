@@ -7,19 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import fi.nls.oskari.db.BundleHelper;
+import org.oskari.helpers.BundleHelper;
 import fi.nls.oskari.domain.map.view.Bundle;
 import fi.nls.oskari.domain.map.view.View;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
-import fi.nls.oskari.util.FlywayHelper;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.oskari.helpers.AppSetupHelper;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
 import fi.nls.oskari.map.view.ViewService;
 import fi.nls.oskari.map.view.AppSetupServiceMybatisImpl;
 
 
-public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist implements JdbcMigration {
+public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist extends BaseJavaMigration {
     private static final Logger LOG = LogFactory.getLogger(V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist.class);
 
     private static final String BUNDLE_LAYERSELECTOR2 = "layerselector2";
@@ -28,7 +29,9 @@ public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist imp
     private int updatedViewCount = 0;
     private ViewService service = null;
 
-    public void migrate(Connection connection) throws Exception {
+    public void migrate(Context context) throws Exception {
+        
+        Connection connection = context.getConnection();
         service =  new AppSetupServiceMybatisImpl();
         try {
             updateViews(connection);
@@ -72,12 +75,12 @@ public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist imp
 
 
     public void addHierarchicalLayerListBundle(Connection conn, final long viewId) throws SQLException {
-        Bundle layerselectorBundle = BundleHelper.getRegisteredBundle(BUNDLE_LAYERSELECTOR2, conn);
+        Bundle layerselectorBundle = BundleHelper.getRegisteredBundle(conn, BUNDLE_LAYERSELECTOR2);
         if( layerselectorBundle == null) {
             // not even registered so migration not needed
             return;
         }
-        Bundle newBundle = BundleHelper.getRegisteredBundle(BUNDLE_HIERARCHICAL_LAYERLIST, conn);
+        Bundle newBundle = BundleHelper.getRegisteredBundle(conn, BUNDLE_HIERARCHICAL_LAYERLIST);
         if(newBundle == null) {
             throw new RuntimeException("Bundle not registered: " + BUNDLE_HIERARCHICAL_LAYERLIST);
         }
