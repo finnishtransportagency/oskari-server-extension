@@ -3,7 +3,8 @@ package flyway.livi;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.util.JSONHelper;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 import org.json.JSONObject;
 
 import java.sql.Connection;
@@ -16,12 +17,12 @@ import java.util.ArrayList;
 /**
  * Adds privacyPolicyUrl to download-basket conf
  */
-public class V1_0_6__add_privacy_policy_url_to_download_basket_conf implements JdbcMigration {
+public class V1_0_6__add_privacy_policy_url_to_download_basket_conf extends BaseJavaMigration {
     private static final Logger LOG = LogFactory.getLogger(V1_0_6__add_privacy_policy_url_to_download_basket_conf.class);
 
-    public void migrate(Connection connection)
-            throws Exception {
-
+    public void migrate(Context context) throws Exception {
+        Connection connection = context.getConnection();
+        
         final ArrayList<Bundle> downloadBasketBundles = getDownloadBasketBundles(connection);
         for(Bundle bundle: downloadBasketBundles) {
             if(!modifyConfig(bundle)) {

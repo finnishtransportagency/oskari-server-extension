@@ -1,8 +1,9 @@
 package flyway.livi;
 
-import fi.nls.oskari.util.FlywayHelper;
+import org.oskari.helpers.AppSetupHelper;
 import fi.nls.oskari.util.PropertyUtil;
-import org.flywaydb.core.api.migration.jdbc.JdbcMigration;
+import org.flywaydb.core.api.migration.BaseJavaMigration;
+import org.flywaydb.core.api.migration.Context;
 
 import java.sql.Connection;
 import java.util.List;
@@ -14,21 +15,22 @@ import java.util.List;
  * download-basket for all default and user views.
  *
  */
-public class V1_0_4__add_download_basket_to_views implements JdbcMigration {
+public class V1_0_4__add_download_basket_to_views extends BaseJavaMigration {
 
     private static final String BUNDLE_ID = "download-basket";
 
-    public void migrate(Connection connection) throws Exception {
+    public void migrate(Context context) throws Exception {
+        Connection connection = context.getConnection();
         if (PropertyUtil.getOptional("flyway.livi.1_0_4.skip", true)) {
             return;
         }
 
         final List<Long> views = FlywayHelper.getUserAndDefaultViewIds(connection);
         for (Long viewId : views) {
-            if (FlywayHelper.viewContainsBundle(connection, BUNDLE_ID, viewId)) {
+            if (AppSetupHelper.appContainsBundle(connection, viewId, BUNDLE_ID)) {
                 continue;
             }
-            FlywayHelper.addBundleWithDefaults(connection, viewId, BUNDLE_ID);
+            AppSetupHelper.addBundleToApp(connection, viewId, BUNDLE_ID);
         }
     }
 }

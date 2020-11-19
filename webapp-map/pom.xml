@@ -24,8 +24,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>fi.nls.oskari.service</groupId>
-			<artifactId>oskari-control-admin</artifactId>
+			<groupId>org.oskari.service</groupId>
+			<artifactId>control-admin</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>
 		
@@ -45,13 +45,13 @@
 
 		<!-- oskari -->
 		<dependency>
-			<groupId>fi.nls.oskari.service</groupId>
-			<artifactId>oskari-control-example</artifactId>
+			<groupId>org.oskari.service</groupId>
+			<artifactId>control-example</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>fi.nls.oskari</groupId>
+			<groupId>org.oskari</groupId>
 			<artifactId>servlet-map</artifactId>
 			<version>${oskari.version}</version>
 			<exclusions>
@@ -63,7 +63,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>fi.nls.oskari</groupId>
+			<groupId>org.oskari</groupId>
 			<artifactId>service-logging</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>
@@ -84,7 +84,7 @@
 			<version>${postgresql.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>fi.nls.oskari</groupId>
+			<groupId>org.oskari</groupId>
 			<artifactId>download-basket</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>

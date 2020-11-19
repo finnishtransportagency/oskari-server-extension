@@ -1,4 +1,4 @@
-package vaylavirasto.announcements.helpers;
+/*package vaylavirasto.announcements.helpers;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -16,8 +16,7 @@ public class JSONAnnouncementHelper {
 	private static final Logger log = LogFactory
 			.getLogger(JSONAnnouncementHelper.class);
 
-	public static final JSONObject createAnnouncementsJSONOutput(
-			List<Announcement> announcements) {
+	public static final JSONObject createAnnouncementsJSONOutput(List<Announcement> announcements) {
 		JSONArray outputArray = new JSONArray();
 
 		for (Announcement a : announcements) {
@@ -40,3 +39,4 @@ public class JSONAnnouncementHelper {
 		return outputObject;
 	}
 }
+*/
