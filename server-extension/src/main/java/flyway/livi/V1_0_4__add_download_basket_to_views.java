@@ -25,7 +25,7 @@ public class V1_0_4__add_download_basket_to_views extends BaseJavaMigration {
             return;
         }
 
-        final List<Long> views = FlywayHelper.getUserAndDefaultViewIds(connection);
+        final List<Long> views = AppSetupHelper.getSetupsForUserAndDefaultType(connection);
         for (Long viewId : views) {
             if (AppSetupHelper.appContainsBundle(connection, viewId, BUNDLE_ID)) {
                 continue;

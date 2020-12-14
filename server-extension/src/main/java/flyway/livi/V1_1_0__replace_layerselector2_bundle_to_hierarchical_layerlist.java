@@ -55,11 +55,11 @@ public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist ext
     private List<View> getOutdatedViews(Connection conn) throws SQLException {
 
         List<View> list = new ArrayList<>();
-        final String sql = "SELECT id FROM portti_view " +
+        final String sql = "SELECT id FROM oskari_appsetup " +
                 "WHERE (type = 'USER' OR type = 'DEFAULT') AND " +
                 "id IN (" +
-                "SELECT distinct view_id FROM portti_view_bundle_seq WHERE bundle_id IN (" +
-                "SELECT id FROM portti_bundle WHERE name='layerselection2' OR name='layerselector2'" +
+                "SELECT distinct appsetup_id FROM oskari_appsetup_bundles WHERE bundle_id IN (" +
+                "SELECT id FROM oskari_bundle WHERE name='layerselection2' OR name='layerselector2'" +
                 "));";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             try (ResultSet rs = statement.executeQuery()) {
@@ -91,12 +91,11 @@ public class V1_1_0__replace_layerselector2_bundle_to_hierarchical_layerlist ext
     }
 
     public void replaceLayerselectorBundleToHierarchicalLayerlist(Connection conn, final long viewId, final Bundle oldBundle, final Bundle newBundle) throws SQLException {
-        final String sql = "UPDATE portti_view_bundle_seq " +
+        final String sql = "UPDATE oskari_appsetup_bundles " +
                 "SET " +
                 "    bundle_id=?, " +
-                "    startup=NULL, " +
                 "    bundleinstance=?" +
-                "WHERE bundle_id = ? and view_id=?";
+                "WHERE bundle_id = ? and appsetup_id=?";
         
         try (PreparedStatement statement =
                      conn.prepareStatement(sql)){

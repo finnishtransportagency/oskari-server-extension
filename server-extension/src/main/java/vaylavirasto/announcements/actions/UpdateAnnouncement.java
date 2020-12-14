@@ -6,7 +6,6 @@ import fi.nls.oskari.control.ActionParameters;
 import fi.nls.oskari.log.LogFactory;
 import fi.nls.oskari.log.Logger;
 import fi.nls.oskari.util.ResponseHelper;
-import fi.nls.oskari.control.RestActionHandler;
 import vaylavirasto.announcements.helpers.AnnouncementsDBHelper;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +17,7 @@ public class UpdateAnnouncement extends AnnouncementsRestActionHandler{
     @Override
     public void handlePost(ActionParameters params) throws ActionException {
         requireLiviConfigured();
+        params.requireAdminUser();
 
         try {
             JSONObject result = AnnouncementsDBHelper.updateAnnouncement(params);

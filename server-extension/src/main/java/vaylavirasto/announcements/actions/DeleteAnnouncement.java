@@ -17,6 +17,7 @@ public class DeleteAnnouncement extends AnnouncementsRestActionHandler {
     @Override
     public void handlePost(ActionParameters params) throws ActionException {
         requireLiviConfigured();
+        params.requireAdminUser();
 
         try {
             JSONObject result = AnnouncementsDBHelper.deleteAnnouncement(params);

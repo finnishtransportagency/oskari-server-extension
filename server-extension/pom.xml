@@ -12,7 +12,7 @@
     
     <dependencies>
         <dependency>
-            <groupId>org.oskari.service</groupId>
+            <groupId>org.oskari</groupId>
             <artifactId>control-base</artifactId>
             <version>${oskari.version}</version>
         </dependency>
@@ -22,6 +22,11 @@
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.oskari</groupId>
+            <artifactId>content-resources</artifactId>
         </dependency>
 
     </dependencies>

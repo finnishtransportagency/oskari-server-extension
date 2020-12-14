@@ -36,10 +36,10 @@ public class V1_0_6__add_privacy_policy_url_to_download_basket_conf extends Base
 
     public static Bundle updateBundleInView(Connection connection, Bundle bundle)
             throws SQLException {
-        final String sql = "UPDATE portti_view_bundle_seq SET " +
+        final String sql = "UPDATE oskari_appsetup_bundles SET " +
                 "config=? " +
                 " WHERE bundle_id=? " +
-                " AND view_id=?";
+                " AND appsetup_id=?";
 
         try (final PreparedStatement statement =
                      connection.prepareStatement(sql)) {
@@ -65,14 +65,14 @@ public class V1_0_6__add_privacy_policy_url_to_download_basket_conf extends Base
 
     private ArrayList<Bundle> getDownloadBasketBundles(Connection connection) throws Exception {
         ArrayList<Bundle> ids = new ArrayList<>();
-        final String sql = "SELECT view_id, bundle_id, config FROM portti_view_bundle_seq " +
-                "WHERE bundle_id = (SELECT id FROM portti_bundle WHERE name = 'download-basket')";
+        final String sql = "SELECT appsetup_id, bundle_id, config FROM oskari_appsetup_bundles " +
+                "WHERE bundle_id = (SELECT id FROM oskari_bundle WHERE name = 'download-basket')";
         try (final PreparedStatement statement =
                      connection.prepareStatement(sql);
              ResultSet rs = statement.executeQuery()) {
             while(rs.next()) {
                 Bundle b = new Bundle();
-                b.viewId = rs.getLong("view_id");
+                b.viewId = rs.getLong("appsetup_id");
                 b.bundleId = rs.getLong("bundle_id");
                 b.config = rs.getString("config");
                 ids.add(b);
