@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>fi.livi.oskari</groupId>
 		<artifactId>livi-parent</artifactId>
-		<version>4.0.0-SNAPSHOT</version>
+		<version>4.1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>webapp-map</artifactId>
@@ -22,6 +22,11 @@
 			<artifactId>server-extension</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+        
+        <dependency>
+            <groupId>org.oskari</groupId>
+            <artifactId>control-announcements</artifactId>
+        </dependency>
         
         <dependency>
             <groupId>org.oskari</groupId>
