@@ -181,6 +181,20 @@
         </c:choose>
     </div>
 
+    <div id="privacyPolicyLink">
+        <u>
+            <c:if test="${language == 'fi'}">
+                <a href="https://vayla.fi/documents/25230764/35414616/Tietosuojaseloste+Avoimen+datan+jakelukanavat.pdf/bd416204-3517-edb3-6a89-01756f0f6310/Tietosuojaseloste+Avoimen+datan+jakelukanavat.pdf?t=1609855081538" target="_blank">Tietosuojaseloste</a>
+            </c:if>
+            <c:if test="${language == 'sv'}">
+                <a href="https://vayla.fi/documents/25230764/35414616/Dataskyddsbeskrivning+Distributionskanaler+f%C3%B6r+%C3%B6ppna+data.pdf/17f27d6b-8fa0-1943-5315-e9138b31400b/Dataskyddsbeskrivning+Distributionskanaler+f%C3%B6r+%C3%B6ppna+data.pdf?t=1609855082317" target="_blank">Dataskyddsbeskrivning</a>
+            </c:if>
+            <c:if test="${language == 'en'}">
+                <a href="https://vayla.fi/documents/25230764/35414616/Tietosuojaseloste+Avoimen+datan+jakelukanavat.pdf/bd416204-3517-edb3-6a89-01756f0f6310/Tietosuojaseloste+Avoimen+datan+jakelukanavat.pdf?t=1609855081538" target="_blank">Privacy statement</a>
+            </c:if>
+        </u>
+    </div>
+
 </nav>
 <div id="contentMap" class="oskariui container-fluid">
     <div id="menutoolbar" class="container-fluid"></div>
