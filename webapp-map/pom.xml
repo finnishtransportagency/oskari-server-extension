@@ -105,6 +105,11 @@
 			<artifactId>download-basket</artifactId>
 			<version>${oskari.version}</version>
 		</dependency>
+        <dependency>
+            <groupId>fi.nls.oskari.extras</groupId>
+            <artifactId>oskari-search-nls</artifactId>
+            <version>3.6.1</version>
+        </dependency>
     </dependencies>
 
     <build>
