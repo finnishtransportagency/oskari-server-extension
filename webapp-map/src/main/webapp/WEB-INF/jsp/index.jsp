@@ -118,7 +118,7 @@
 
 	<div class="oskari-tile oskari-tile-closed digiroad" style="display: block;">
 		<div class="oskari-tile-title">
-			<a href="https://ava.vaylapilvi.fi/ava/Tiest%C3%B6tiedot/Digiroad/Digiroad-irrotusaineistot/latest" target="_blank">DIGIROAD</a>
+			<a href="https://ava.vaylapilvi.fi/ava/Tie/Digiroad/Aineistojulkaisut/latest" target="_blank">DIGIROAD</a>
 		</div>
 		<div class="oskari-tile-status"></div>
 	</div>
